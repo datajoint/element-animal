@@ -5,12 +5,16 @@ from collections.abc import Mapping
 schema = dj.schema()
 
 
-def activate(database_name, create_schema=True, create_tables=True, add_objects=None):
-    required_dj_classes = ("Lab", "User", "Source", "Protocol")
-    assert isinstance(add_objects, Mapping) and all(
-        isinstance(add_objects.get(cls, None), (dj.Manual, dj.Lookup, dj.Imported, dj.Computed))
-        for cls in required_dj_classes), "Unmet requirements"
-    schema.activate(database_name, create_schema=create_schema, create_tables=create_tables, add_objects=add_objects)
+def activate(schema_name, create_schema=True, create_tables=True, add_objects=None):
+    upstream_tables = ("Lab", "User", "Source", "Protocol")
+    assert isinstance(add_objects, Mapping)
+    try:
+        raise RuntimeError("Table %s is required for module lab" % next(
+            name for name in upstream_tables
+            if not isinstance(add_objects.get(name, None), (dj.Manual, dj.Lookup, dj.Imported, dj.Computed))))
+    except StopIteration:
+        pass  # all ok
+    schema.activate(schema_name, create_schema=create_schema, create_tables=create_tables, add_objects=add_objects)
 
 
 @schema
