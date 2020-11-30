@@ -1,8 +1,16 @@
 import datajoint as dj
-from djutils.templates import SchemaTemplate
+from collections.abc import Mapping
 
 
-schema = SchemaTemplate()
+schema = dj.schema()
+
+
+def activate(database_name, create_schema=True, create_tables=True, add_objects=None):
+    required_dj_classes = ("Lab", "User", "Source", "Protocol")
+    assert isinstance(add_objects, Mapping) and all(
+        isinstance(add_objects.get(cls, None), (dj.Manual, dj.Lookup, dj.Imported, dj.Computed))
+        for cls in required_dj_classes), "Unmet requirements"
+    schema.activate(database_name, create_schema=create_schema, create_tables=create_tabkles, add_objects=add_objects)
 
 
 @schema
@@ -29,8 +37,6 @@ class Sequence(dj.Lookup):
 @schema
 class Allele(dj.Lookup):
 
-    _Source = ...
-
     definition = """
     allele                      : varchar(255)    # informal name of an allele
     ---
@@ -41,7 +47,7 @@ class Allele(dj.Lookup):
         definition = """
         -> master
         ---
-        -> master._Source
+        -> Source
         source_identifier=''        : varchar(255)    # id inside the line provider
         source_url=''               : varchar(255)    # link to the line information
         expression_data_url=''      : varchar(255)    # link to the expression pattern from Allen institute brain atlas
@@ -74,11 +80,6 @@ class Line(dj.Lookup):
 @schema
 class Subject(dj.Manual):
 
-    _Lab = ...
-    _Protocol = ...
-    _User = ...
-    _Source = ...
-
     definition = """
     subject                 : varchar(32)
     ---
@@ -92,13 +93,13 @@ class Subject(dj.Manual):
     class Protocol(dj.Part):
         definition = """
         -> master
-        -> master._Protocol
+        -> Protocol
         """
 
     class User(dj.Part):
         definition = """
         -> master
-        -> master._User
+        -> User
         """
 
     class Line(dj.Part):
@@ -119,13 +120,13 @@ class Subject(dj.Manual):
         definition = """
         -> master
         ---
-        -> master._Source
+        -> Source
         """
 
     class Lab(dj.Part):
         definition = """
         -> master
-        -> master._Lab
+        -> Lab
         ---
         subject_alias=''    : varchar(32)  # alias of the subject in this lab, if different from the id
         """
