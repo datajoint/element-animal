@@ -10,14 +10,14 @@ def activate(database_name, create_schema=True, create_tables=True, add_objects=
     assert isinstance(add_objects, Mapping) and all(
         isinstance(add_objects.get(cls, None), (dj.Manual, dj.Lookup, dj.Imported, dj.Computed))
         for cls in required_dj_classes), "Unmet requirements"
-    schema.activate(database_name, create_schema=create_schema, create_tables=create_tabkles, add_objects=add_objects)
+    schema.activate(database_name, create_schema=create_schema, create_tables=create_tables, add_objects=add_objects)
 
 
 @schema
 class Strain(dj.Lookup):
-    # strain of animal, C57/Bl6
     definition = """
-    strain              : varchar(32)	# informal name of a strain
+    # Strain of animal, e.g. C57Bl/6
+    strain              : varchar(32)	# abbreviated strain name
     ---
     strain_standard_name  : varchar(32)   # formal name of a strain
     strain_desc=''      : varchar(255)	# description of this strain
@@ -27,7 +27,7 @@ class Strain(dj.Lookup):
 @schema
 class Sequence(dj.Lookup):
     definition = """
-    sequence            : varchar(32)	# informal name of a sequence
+    sequence            : varchar(32)	# abbreviated sequence name
     ---
     base_pairs=''       : varchar(1024)	# base pairs
     sequence_desc=''    : varchar(255)	# description
@@ -38,7 +38,7 @@ class Sequence(dj.Lookup):
 class Allele(dj.Lookup):
 
     definition = """
-    allele                      : varchar(255)    # informal name of an allele
+    allele                      : varchar(32)    # abbreviated allele name
     ---
     allele_standard_name=''     : varchar(255)	  # standard name of an allele
     """
@@ -63,10 +63,10 @@ class Allele(dj.Lookup):
 @schema
 class Line(dj.Lookup):
     definition = """
-    line                    : varchar(32)	# informal name of a line
+    line                    : varchar(32)	# abbreviated name for the line
     ---
-    line_desc=''            : varchar(2048)	# description
-    target_phenotype=''     : varchar(255)	# target phenotype
+    line_description=''     : varchar(2000)	
+    target_phenotype=''     : varchar(255)	
     is_active               : boolean		# whether the line is in active breeding
     """
 
@@ -81,11 +81,12 @@ class Line(dj.Lookup):
 class Subject(dj.Manual):
 
     definition = """
+    # Animal Subject
     subject                 : varchar(32)
     ---
-    sex                     : enum('M', 'F', 'U')	# sex
-    subject_birth_date      : date			        # birth date
-    subject_desc=''         : varchar(1024)
+    sex                     : enum('M', 'F', 'U')
+    subject_birth_date      : date   
+    subject_description=''  : varchar(1024)
     """
 
     # idea here: when query the master table,
@@ -156,9 +157,9 @@ class BreedingPair(dj.Manual):
     -> Line
     breeding_pair           : varchar(32)
     ---
-    bp_start_date=null      : date		            # start date
-    bp_end_date=null        : date			        # end date
-    bp_desc=''              :	varchar(2048)		# description
+    bp_start_date=null      : date
+    bp_end_date=null        : date
+    bp_description=''       : varchar(2048)
     """
 
     class Father(dj.Part):
@@ -212,7 +213,7 @@ class SubjectLitter(dj.Manual):
 @schema
 class Cage(dj.Lookup):
     definition = """
-    cage            : varchar(64)   # cage identifying info
+    cage            : varchar(32)   # cage identifying info
     ---
     cage_purpose='' : varchar(128)  # cage purpose
     """
@@ -221,15 +222,13 @@ class Cage(dj.Lookup):
 @schema
 class SubjectCaging(dj.Manual):
 
-    _User = ...
-
     definition = """
     # record of animal caging
     -> Subject
     caging_datetime     : datetime   # date of cage entry
     ---
     -> Cage
-    -> self._User           # person associated with the cage transfer
+    -> self.User           # person associated with the cage transfer
     """
 
 
