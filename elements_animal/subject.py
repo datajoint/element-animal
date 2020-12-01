@@ -9,9 +9,9 @@ def activate(schema_name, create_schema=True, create_tables=True, add_objects=No
     upstream_tables = ("Lab", "User", "Source", "Protocol")
     assert isinstance(add_objects, Mapping)
     try:
-        raise RuntimeError("Table %s is required for module lab" % next(
+        raise RuntimeError("Table %s is required for module `subject`" % next(
             name for name in upstream_tables
-            if not isinstance(add_objects.get(name, None), (dj.Manual, dj.Lookup, dj.Imported, dj.Computed))))
+            if not isinstance(add_objects.get(name, None), (dj.Manual, dj.Lookup, dj.Imported, dj.Computed, dj.user_tables.OrderedClass))))
     except StopIteration:
         pass  # all ok
     schema.activate(schema_name, create_schema=create_schema, create_tables=create_tables, add_objects=add_objects)
@@ -232,7 +232,7 @@ class SubjectCaging(dj.Manual):
     caging_datetime     : datetime   # date of cage entry
     ---
     -> Cage
-    -> self.User           # person associated with the cage transfer
+    -> User           # person associated with the cage transfer
     """
 
 
