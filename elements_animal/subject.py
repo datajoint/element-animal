@@ -8,7 +8,7 @@ schema = dj.schema()
 
 def activate(schema_name, *, create_schema=True, create_tables=True, linking_module=None):
     """
-    activate(schema_name, *, create_schema=True, create_tables=True, required_module=None)
+    activate(schema_name, *, create_schema=True, create_tables=True, linking_module=None)
         :param schema_name: schema name on the database server to activate the `subject` element
         :param create_schema: when True (default), create schema in the database if it does not yet exist.
         :param create_tables: when True (default), create tables in the database if they do not yet exist.
