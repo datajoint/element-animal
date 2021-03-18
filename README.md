@@ -20,5 +20,8 @@
 
 ## Element architecture
 
+### Subject Diagram
 ![subject diagram](images/subject_diagram.svg)
-![genotyping diagram](images/genoytping_diagram.svg)
+
+### Genotyping Diagram
+![genotyping diagram](images/genotyping_diagram.svg)
