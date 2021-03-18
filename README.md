@@ -12,7 +12,7 @@
 
 ## Element usage
 
-+ See the [workflow-animal] (https://github.com/datajoint/workflow-animal) repository for example usage of `elements-animal`.
++ See the [workflow-animal](https://github.com/datajoint/workflow-animal) repository for example usage of `elements-animal`.
 
 + Also refer to the [workflow-imaging](https://github.com/datajoint/workflow-imaging) and [workflow-ephys](https://github.com/datajoint/workflow-ephys) repositories for example usages of `elements-animal` when combining with other elements.
 
