@@ -4,7 +4,7 @@ There are two modules in `element-animal`:
 + subject: contains the basic information of subject, including Strain, Line, Subject, Zygosity, and SubjectDeath information
 + genotyping: this module is designed for labs that keep track of colony management and genotyping results, containing information of breeding, weaning, housing, and genotyping.
 
-Check [here](Background.md) for development background.
+See [Background](Background.md) for the background information and development timeline.
 
 ## Element usage
 
