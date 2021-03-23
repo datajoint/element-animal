@@ -6,7 +6,7 @@ import sys
 here = path.abspath(path.dirname(__file__))
 
 long_description = """"
-DataJoint Elements for Animal Management
+DataJoint Element for Animal Management
 """
 
 with open(path.join(here, 'requirements.txt')) as f:
