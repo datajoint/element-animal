@@ -40,16 +40,6 @@ class Strain(dj.Lookup):
 
 
 @schema
-class Sequence(dj.Lookup):
-    definition = """
-    sequence            : varchar(32)	# abbreviated sequence name
-    ---
-    base_pairs=''       : varchar(1024)	# base pairs
-    sequence_desc=''    : varchar(255)	# description
-    """
-
-
-@schema
 class Allele(dj.Lookup):
 
     definition = """
@@ -68,20 +58,14 @@ class Allele(dj.Lookup):
         expression_data_url=''      : varchar(255)    # link to the expression pattern from Allen institute brain atlas
         """
 
-    class Sequence(dj.Part):
-        definition = """
-        -> master
-        -> Sequence
-        """
-
 
 @schema
 class Line(dj.Lookup):
     definition = """
     line                    : varchar(32)	# abbreviated name for the line
     ---
-    line_description=''     : varchar(2000)	
-    target_phenotype=''     : varchar(255)	
+    line_description=''     : varchar(2000)
+    target_phenotype=''     : varchar(255)
     is_active               : boolean		# whether the line is in active breeding
     """
 
@@ -100,7 +84,7 @@ class Subject(dj.Manual):
     subject                 : varchar(32)
     ---
     sex                     : enum('M', 'F', 'U')
-    subject_birth_date      : date   
+    subject_birth_date      : date
     subject_description=''  : varchar(1024)
     """
 
@@ -161,98 +145,6 @@ class SubjectCullMethod(dj.Manual):
     -> Subject
     ---
     cull_method:    varchar(255)
-    """
-
-
-@schema
-class BreedingPair(dj.Manual):
-    definition = """
-    -> Line
-    breeding_pair           : varchar(32)
-    ---
-    bp_start_date=null      : date
-    bp_end_date=null        : date
-    bp_description=''       : varchar(2048)
-    """
-
-    class Father(dj.Part):
-        definition = """
-        -> master
-        ---
-        -> Subject
-        """
-
-    class Mother(dj.Part):
-        definition = """
-        -> master
-        -> Subject
-        """
-
-
-@schema
-class Litter(dj.Manual):
-    definition = """
-    # litter information, ingest when
-    -> BreedingPair
-    litter_birth_date       : date
-    ---
-    num_of_pups             : tinyint
-    litter_notes=''         : varchar(255)	  # notes
-    """
-
-
-@schema
-class Weaning(dj.Manual):
-    definition = """
-    # weaning information
-    -> Litter
-    ---
-    weaning_date            : date
-    num_of_male             : tinyint
-    num_of_female           : tinyint
-    weaning_notes=''        : varchar(255)
-    """
-
-
-@schema
-class SubjectLitter(dj.Manual):
-    definition = """
-    -> Subject
-    ---
-    -> Litter
-    """
-
-
-@schema
-class Cage(dj.Lookup):
-    definition = """
-    cage            : varchar(32)   # cage identifying info
-    ---
-    cage_purpose='' : varchar(128)  # cage purpose
-    """
-
-
-@schema
-class SubjectCaging(dj.Manual):
-
-    definition = """
-    # record of animal caging
-    -> Subject
-    caging_datetime     : datetime   # date of cage entry
-    ---
-    -> Cage
-    -> User           # person associated with the cage transfer
-    """
-
-
-@schema
-class GenotypeTest(dj.Manual):
-    definition = """
-    -> Subject
-    -> Sequence
-    genotype_test_id    : varchar(32)    # identifier of a genotype test
-    ---
-    test_result         : enum("Present", "Absent")		# test result
     """
 
 

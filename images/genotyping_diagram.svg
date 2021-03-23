@@ -1,0 +1,192 @@
+<svg height="185pt" viewBox="0.00 0.00 1004.50 185.00" width="1005pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g class="graph" id="graph0" transform="scale(1 1) rotate(0) translate(4 181)">
+<polygon fill="white" points="-4,4 -4,-181 1000.5,-181 1000.5,4 -4,4" stroke="transparent"/>
+<!-- genotyping.Litter -->
+<g class="node" id="node1">
+<title>genotyping.Litter</title>
+<g id="a_node1"><a xlink:title="→ genotyping.BreedingPairlitter_birth_date    ------------------------------num_of_pups          litter_notes=&quot;&quot;      ">
+<polygon fill="#00ff00" fill-opacity="0.188235" points="116,-106 11,-106 11,-71 116,-71 116,-106" stroke="#00ff00" stroke-opacity="0.188235"/>
+<text fill="darkgreen" font-family="arial" font-size="12.00" text-anchor="start" text-decoration="underline" x="19" y="-86.4">genotyping.Litter</text>
+</a>
+</g>
+</g>
+<!-- genotyping.SubjectLitter -->
+<g class="node" id="node4">
+<title>genotyping.SubjectLitter</title>
+<g id="a_node4"><a xlink:title="→ subject.Subject------------------------------→ genotyping.Litter">
+<polygon fill="#00ff00" fill-opacity="0.188235" points="426.5,-35 280.5,-35 280.5,0 426.5,0 426.5,-35" stroke="#00ff00" stroke-opacity="0.188235"/>
+<text fill="darkgreen" font-family="arial" font-size="12.00" text-anchor="middle" x="353.5" y="-14.4">genotyping.SubjectLitter</text>
+</a>
+</g>
+</g>
+<!-- genotyping.Litter&#45;&gt;genotyping.SubjectLitter -->
+<g class="edge" id="edge1">
+<title>genotyping.Litter-&gt;genotyping.SubjectLitter</title>
+<path d="M116.04,-73.15C118.9,-72.41 121.73,-71.69 124.5,-71 176.44,-58.03 235.31,-44.56 280.36,-34.51" fill="none" stroke="#000000" stroke-dasharray="5,2" stroke-opacity="0.250980" stroke-width="0.75"/>
+</g>
+<!-- genotyping.Weaning -->
+<g class="node" id="node11">
+<title>genotyping.Weaning</title>
+<g id="a_node11"><a xlink:title="→ genotyping.Litter------------------------------weaning_date         num_of_male          num_of_female        weaning_notes=&quot;&quot;     ">
+<polygon fill="#00ff00" fill-opacity="0.188235" points="127,-35 0,-35 0,0 127,0 127,-35" stroke="#00ff00" stroke-opacity="0.188235"/>
+<text fill="darkgreen" font-family="arial" font-size="12.00" text-anchor="middle" x="63.5" y="-14.4">genotyping.Weaning</text>
+</a>
+</g>
+</g>
+<!-- genotyping.Litter&#45;&gt;genotyping.Weaning -->
+<g class="edge" id="edge2">
+<title>genotyping.Litter-&gt;genotyping.Weaning</title>
+<path d="M63.5,-70.8C63.5,-59.95 63.5,-45.87 63.5,-35.05" fill="none" stroke="#000000" stroke-opacity="0.250980" stroke-width="2"/>
+</g>
+<!-- genotyping.AlleleSequence -->
+<g class="node" id="node2">
+<title>genotyping.AlleleSequence</title>
+<g id="a_node2"><a xlink:title="→ subject.Allele→ genotyping.Sequence">
+<polygon fill="#000000" fill-opacity="0.125490" points="996.5,-106 862.5,-106 862.5,-71 996.5,-71 996.5,-106" stroke="transparent"/>
+<text font-family="arial" font-size="10.00" text-anchor="middle" x="929.5" y="-86">genotyping.AlleleSequence</text>
+</a>
+</g>
+</g>
+<!-- genotyping.BreedingPair.Mother -->
+<g class="node" id="node3">
+<title>genotyping.BreedingPair.Mother</title>
+<g id="a_node3"><a xlink:title="→ genotyping.BreedingPair→ subject.Subject">
+<polygon fill="transparent" points="460,-98 305,-98 305,-79 460,-79 460,-98" stroke="transparent"/>
+<text font-family="arial" font-size="10.00" text-anchor="middle" x="382.5" y="-86">genotyping.BreedingPair.Mother</text>
+</a>
+</g>
+</g>
+<!-- subject.Subject -->
+<g class="node" id="node5">
+<title>subject.Subject</title>
+<g id="a_node5"><a xlink:title="subject              ------------------------------sex                  subject_birth_date   subject_description=&quot;&quot; ">
+<polygon fill="#00ff00" fill-opacity="0.188235" points="534.5,-177 436.5,-177 436.5,-142 534.5,-142 534.5,-177" stroke="#00ff00" stroke-opacity="0.188235"/>
+<text fill="darkgreen" font-family="arial" font-size="12.00" text-anchor="start" text-decoration="underline" x="444.5" y="-157.4">subject.Subject</text>
+</a>
+</g>
+</g>
+<!-- subject.Subject&#45;&gt;genotyping.BreedingPair.Mother -->
+<g class="edge" id="edge3">
+<title>subject.Subject-&gt;genotyping.BreedingPair.Mother</title>
+<path d="M460.83,-141.97C440.24,-128.18 411.7,-109.06 395.37,-98.12" fill="none" stroke="#000000" stroke-opacity="0.250980" stroke-width="0.75"/>
+</g>
+<!-- subject.Subject&#45;&gt;genotyping.SubjectLitter -->
+<g class="edge" id="edge4">
+<title>subject.Subject-&gt;genotyping.SubjectLitter</title>
+<path d="M486.56,-141.83C486.88,-122.72 484.59,-91.42 468.5,-71 455.53,-54.54 436.23,-43.05 417.13,-35.12" fill="none" stroke="#000000" stroke-opacity="0.250980" stroke-width="2"/>
+</g>
+<!-- genotyping.BreedingPair.Father -->
+<g class="node" id="node6">
+<title>genotyping.BreedingPair.Father</title>
+<g id="a_node6"><a xlink:title="→ genotyping.BreedingPair------------------------------→ subject.Subject">
+<polygon fill="transparent" points="287,-98 134,-98 134,-79 287,-79 287,-98" stroke="transparent"/>
+<text font-family="arial" font-size="10.00" text-anchor="middle" x="210.5" y="-86">genotyping.BreedingPair.Father</text>
+</a>
+</g>
+</g>
+<!-- subject.Subject&#45;&gt;genotyping.BreedingPair.Father -->
+<g class="edge" id="edge5">
+<title>subject.Subject-&gt;genotyping.BreedingPair.Father</title>
+<path d="M436.34,-146.16C381.03,-132.29 292.65,-110.11 244.49,-98.03" fill="none" stroke="#000000" stroke-dasharray="5,2" stroke-opacity="0.250980" stroke-width="0.75"/>
+</g>
+<!-- genotyping.SubjectCaging -->
+<g class="node" id="node9">
+<title>genotyping.SubjectCaging</title>
+<g id="a_node9"><a xlink:title="→ subject.Subjectcaging_datetime      ------------------------------→ genotyping.Cage→ `lab`.`#user`">
+<polygon fill="#00ff00" fill-opacity="0.188235" points="674.5,-106 516.5,-106 516.5,-71 674.5,-71 674.5,-106" stroke="#00ff00" stroke-opacity="0.188235"/>
+<text fill="darkgreen" font-family="arial" font-size="12.00" text-anchor="start" text-decoration="underline" x="524.5" y="-86.4">genotyping.SubjectCaging</text>
+</a>
+</g>
+</g>
+<!-- subject.Subject&#45;&gt;genotyping.SubjectCaging -->
+<g class="edge" id="edge6">
+<title>subject.Subject-&gt;genotyping.SubjectCaging</title>
+<path d="M511.85,-141.97C529.14,-131.13 551.66,-117 568.99,-106.13" fill="none" stroke="#000000" stroke-opacity="0.250980" stroke-width="0.75"/>
+</g>
+<!-- genotyping.GenotypeTest -->
+<g class="node" id="node13">
+<title>genotyping.GenotypeTest</title>
+<g id="a_node13"><a xlink:title="→ subject.Subject→ genotyping.Sequencegenotype_test_id     ------------------------------test_result          ">
+<polygon fill="#00ff00" fill-opacity="0.188235" points="844.5,-106 692.5,-106 692.5,-71 844.5,-71 844.5,-106" stroke="#00ff00" stroke-opacity="0.188235"/>
+<text fill="darkgreen" font-family="arial" font-size="12.00" text-anchor="start" text-decoration="underline" x="700.5" y="-86.4">genotyping.GenotypeTest</text>
+</a>
+</g>
+</g>
+<!-- subject.Subject&#45;&gt;genotyping.GenotypeTest -->
+<g class="edge" id="edge7">
+<title>subject.Subject-&gt;genotyping.GenotypeTest</title>
+<path d="M534.5,-144.38C537.54,-143.56 540.56,-142.76 543.5,-142 593.3,-129.11 649.68,-115.96 693.54,-106.05" fill="none" stroke="#000000" stroke-opacity="0.250980" stroke-width="0.75"/>
+</g>
+<!-- genotyping.BreedingPair -->
+<g class="node" id="node7">
+<title>genotyping.BreedingPair</title>
+<g id="a_node7"><a xlink:title="→ subject.Linebreeding_pair        ------------------------------bp_start_date=null   bp_end_date=null     bp_description=&quot;&quot;    ">
+<polygon fill="#00ff00" fill-opacity="0.188235" points="285,-177 136,-177 136,-142 285,-142 285,-177" stroke="#00ff00" stroke-opacity="0.188235"/>
+<text fill="darkgreen" font-family="arial" font-size="12.00" text-anchor="start" text-decoration="underline" x="144" y="-157.4">genotyping.BreedingPair</text>
+</a>
+</g>
+</g>
+<!-- genotyping.BreedingPair&#45;&gt;genotyping.Litter -->
+<g class="edge" id="edge8">
+<title>genotyping.BreedingPair-&gt;genotyping.Litter</title>
+<path d="M175.29,-141.97C152.1,-131.09 121.86,-116.89 98.68,-106.01" fill="none" stroke="#000000" stroke-opacity="0.250980" stroke-width="0.75"/>
+</g>
+<!-- genotyping.BreedingPair&#45;&gt;genotyping.BreedingPair.Mother -->
+<g class="edge" id="edge9">
+<title>genotyping.BreedingPair-&gt;genotyping.BreedingPair.Mother</title>
+<path d="M251.7,-141.97C286.09,-128.18 333.73,-109.06 361.01,-98.12" fill="none" stroke="#000000" stroke-opacity="0.250980" stroke-width="0.75"/>
+</g>
+<!-- genotyping.BreedingPair&#45;&gt;genotyping.BreedingPair.Father -->
+<g class="edge" id="edge10">
+<title>genotyping.BreedingPair-&gt;genotyping.BreedingPair.Father</title>
+<path d="M210.5,-141.8C210.5,-128.08 210.5,-109.19 210.5,-98.27" fill="none" stroke="#000000" stroke-opacity="0.250980" stroke-width="2"/>
+</g>
+<!-- subject.Allele -->
+<g class="node" id="node8">
+<title>subject.Allele</title>
+<g id="a_node8"><a xlink:title="allele               ------------------------------allele_standard_name=&quot;&quot; ">
+<polygon fill="#000000" fill-opacity="0.125490" points="967,-177 892,-177 892,-142 967,-142 967,-177" stroke="transparent"/>
+<text font-family="arial" font-size="10.00" text-anchor="start" text-decoration="underline" x="900" y="-158">subject.Allele</text>
+</a>
+</g>
+</g>
+<!-- subject.Allele&#45;&gt;genotyping.AlleleSequence -->
+<g class="edge" id="edge11">
+<title>subject.Allele-&gt;genotyping.AlleleSequence</title>
+<path d="M929.5,-141.8C929.5,-130.95 929.5,-116.87 929.5,-106.05" fill="none" stroke="#000000" stroke-opacity="0.250980" stroke-width="0.75"/>
+</g>
+<!-- genotyping.Sequence -->
+<g class="node" id="node10">
+<title>genotyping.Sequence</title>
+<g id="a_node10"><a xlink:title="sequence             ------------------------------base_pairs=&quot;&quot;        sequence_desc=&quot;&quot;     ">
+<polygon fill="#000000" fill-opacity="0.125490" points="848.5,-177 738.5,-177 738.5,-142 848.5,-142 848.5,-177" stroke="transparent"/>
+<text font-family="arial" font-size="10.00" text-anchor="start" text-decoration="underline" x="746.5" y="-158">genotyping.Sequence</text>
+</a>
+</g>
+</g>
+<!-- genotyping.Sequence&#45;&gt;genotyping.AlleleSequence -->
+<g class="edge" id="edge12">
+<title>genotyping.Sequence-&gt;genotyping.AlleleSequence</title>
+<path d="M826.08,-141.97C847.45,-131.13 875.3,-117 896.72,-106.13" fill="none" stroke="#000000" stroke-opacity="0.250980" stroke-width="0.75"/>
+</g>
+<!-- genotyping.Sequence&#45;&gt;genotyping.GenotypeTest -->
+<g class="edge" id="edge13">
+<title>genotyping.Sequence-&gt;genotyping.GenotypeTest</title>
+<path d="M787.45,-141.8C783.52,-130.95 778.42,-116.87 774.5,-106.05" fill="none" stroke="#000000" stroke-opacity="0.250980" stroke-width="0.75"/>
+</g>
+<!-- genotyping.Cage -->
+<g class="node" id="node12">
+<title>genotyping.Cage</title>
+<g id="a_node12"><a xlink:title="cage                 ------------------------------cage_purpose=&quot;&quot;      ">
+<polygon fill="#000000" fill-opacity="0.125490" points="642.5,-177 552.5,-177 552.5,-142 642.5,-142 642.5,-177" stroke="transparent"/>
+<text font-family="arial" font-size="10.00" text-anchor="start" text-decoration="underline" x="560.5" y="-158">genotyping.Cage</text>
+</a>
+</g>
+</g>
+<!-- genotyping.Cage&#45;&gt;genotyping.SubjectCaging -->
+<g class="edge" id="edge14">
+<title>genotyping.Cage-&gt;genotyping.SubjectCaging</title>
+<path d="M597.02,-141.8C596.7,-130.95 596.29,-116.87 595.98,-106.05" fill="none" stroke="#000000" stroke-dasharray="5,2" stroke-opacity="0.250980" stroke-width="0.75"/>
+</g>
+</g>
+</svg>
