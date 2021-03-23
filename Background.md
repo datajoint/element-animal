@@ -6,7 +6,6 @@ Most pipeline begins with some information about the experiment animal subjects.
 Over the past few years, several labs have developed DataJoint-based pipelines for animal management. Our team collaborated with several of them during their projects. Additionally, we interviewed these teams to understand their experiment workflow, associated tools, and interfaces.
 These teams include:
 
-Team / Institution / Pipeline repository
 + International Brain Laboratory https://github.com/int-brain-lab/IBL-pipeline
 + BrainCoGs (Princeton Neuroscience Institute) https://github.com/BrainCOGS/U19-pipeline_python; https://github.com/BrainCOGS/U19-pipeline-matlab
 + MoC3 (Columbia Zuckerman Institute)
