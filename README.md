@@ -22,3 +22,14 @@ See [Background](Background.md) for the background information and development t
 
 ### Genotyping Diagram
 ![genotyping diagram](images/genotyping_diagram.svg)
+
+
+## Installation
+```
+pip install element-animal
+```
+
+If you already have an older version of ***element-animal*** installed using `pip`, upgrade with
+```
+pip install --upgrade element-animal
+```
