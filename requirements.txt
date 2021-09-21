@@ -1,2 +1,2 @@
 datajoint>=0.13
-pynwb
+pynwb=2.0.0
