@@ -19,5 +19,5 @@ def subject_to_nwb(subject_key):
                                        datetime.strptime('00:00:00', '%H:%M:%S').time()),
         description=json.dumps(subject_info, default=str),
         genotype=' x '.join((subject.Line.Allele * subject.Subject.Line & subject_key).fetch('allele')),
-        species='Mus musculus'
+        species=subject_info.pop('species')
     )

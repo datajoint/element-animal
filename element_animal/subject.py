@@ -64,6 +64,7 @@ class Line(dj.Lookup):
     definition = """
     line                    : varchar(32)	# abbreviated name for the line
     ---
+    species=''              : varchar(64)   # Latin name preferred for NWB export (e.g., Mus musculus)
     line_description=''     : varchar(2000)
     target_phenotype=''     : varchar(255)
     is_active               : boolean		# whether the line is in active breeding
@@ -133,7 +134,6 @@ class Subject(dj.Manual):
     def make_nwb(cls, subject_key):
         from .export import subject_to_nwb
         return subject_to_nwb(subject_key)
-
 
 @schema
 class SubjectDeath(dj.Manual):
