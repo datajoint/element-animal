@@ -82,7 +82,7 @@ class Subject(dj.Manual):
 
     definition = """
     # Animal Subject
-    subject                 : varchar(32)
+    subject                 : varchar(8)
     ---
     sex                     : enum('M', 'F', 'U')
     subject_birth_date      : date
