@@ -19,7 +19,7 @@ setup(
     version=__version__,
     description="DataJoint Element for Animal Management",
     long_description=long_description,
-    long_description_content_type = 'text/markdown',
+    long_description_content_type='text/markdown',
     author='DataJoint NEURO',
     author_email='info@vathes.com',
     license='MIT',
