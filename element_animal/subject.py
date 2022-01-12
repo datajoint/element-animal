@@ -6,34 +6,26 @@ import inspect
 schema = dj.schema()
 
 
-def activate(schema_name, *, create_schema=True, create_tables=True,
-             linking_module=None):
+def activate(schema_name, *, create_schema=True, create_tables=True, linking_module=None):
     """
-    activate(schema_name, *, create_schema=True, create_tables=True,
-             linking_module=None)
-        :param schema_name: schema name on the database server to activate the
-                            `subject` element
-        :param create_schema: when True (default), create schema in the
-                              database if it does not yet exist.
-        :param create_tables: when True (default), create tables in the
-                              database if they do not yet exist.
+    activate(schema_name, *, create_schema=True, create_tables=True, linking_module=None)
+        :param schema_name: schema name on the database server to activate the `subject` element
+        :param create_schema: when True (default), create schema in the database if it does not yet exist.
+        :param create_tables: when True (default), create tables in the database if they do not yet exist.
         :param linking_module: a module name or a module containing the
          required dependencies to activate the `subject` element:
              Upstream tables:
-                + Source: the source of the material/resources (e.g. allele,
-                          animal) - typically refers to the vendor
+                + Source: the source of the material/resources (e.g. allele, animal) - typically refers to the vendor (e.g. Jackson Lab - JAX)
                 + Lab: the lab for which a particular animal belongs to
-                + Protocol: the protocol applicable to a particular animal
+                + Protocol: the protocol applicable to a particular animal (e.g. IACUC, IRB)
                 + User: the user associated with a particular animal
     """
     if isinstance(linking_module, str):
         linking_module = importlib.import_module(linking_module)
-    assert inspect.ismodule(linking_module), "The argument 'dependency' must "\
-                                             + "be a module's name or a module"
+    assert inspect.ismodule(linking_module), "The argument 'dependency' must be a module's name or a module"
 
     schema.activate(schema_name, create_schema=create_schema,
-                    create_tables=create_tables,
-                    add_objects=linking_module.__dict__)
+                    create_tables=create_tables, add_objects=linking_module.__dict__)
 
 
 @schema
@@ -61,9 +53,9 @@ class Allele(dj.Lookup):
         -> master
         ---
         -> Source
-        source_identifier=''   : varchar(255) # id inside the line provider
-        source_url=''          : varchar(255) # link to the line information
-        expression_data_url='' : varchar(255) # link to the expression pattern from Allen institute brain atlas
+        source_identifier=''        : varchar(255)    # id inside the line provider
+        source_url=''               : varchar(255)    # link to the line information
+        expression_data_url=''      : varchar(255)    # link to the expression pattern from Allen institute brain atlas
         """
 
 
@@ -74,7 +66,7 @@ class Line(dj.Lookup):
     ---
     line_description=''     : varchar(2000)
     target_phenotype=''     : varchar(255)
-    is_active               : boolean		# true if line is in active breeding
+    is_active               : boolean		# whether the line is in active breeding
     """
 
     class Allele(dj.Part):
@@ -89,7 +81,7 @@ class Subject(dj.Manual):
 
     definition = """
     # Animal Subject
-    subject                 : varchar(8)
+    subject                 : varchar(32)
     ---
     sex                     : enum('M', 'F', 'U')
     subject_birth_date      : date
@@ -134,7 +126,7 @@ class Subject(dj.Manual):
         -> master
         -> Lab
         ---
-        subject_alias='' : varchar(32) # alias of subject in this lab, if different from the id
+        subject_alias=''    : varchar(32)  # alias of the subject in this lab, if different from the id
         """
 
 
@@ -162,5 +154,5 @@ class Zygosity(dj.Manual):
     -> Subject
     -> Allele
     ---
-    zygosity  : enum("Present", "Absent", "Homozygous", "Heterozygous")
+    zygosity        : enum("Present", "Absent", "Homozygous", "Heterozygous")  # zygosity
     """
