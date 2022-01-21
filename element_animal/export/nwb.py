@@ -22,5 +22,5 @@ def subject_to_nwb(subject_key):
         genotype=' x '.join((subject.Line.Allele * subject.Subject.Line
                              & subject_key
                              ).fetch('allele')),
-        species=subject_info.pop['species']
+        species=subject_info['species']
     )
