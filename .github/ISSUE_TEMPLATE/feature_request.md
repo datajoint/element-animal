@@ -26,7 +26,7 @@ Add any errors as a direct result of not exposing this feature.
 
 Please include steps to reproduce provided errors as follows:
 - OS (WIN | MACOS | Linux)
-- Pharus Version
+- DataJoint Element-Animal Version
 - MySQL Version
 - MySQL Deployment Strategy (local-native | local-docker | remote)
 - Minimum number of steps to reliably reproduce the issue

@@ -15,7 +15,7 @@ A clear and concise description of what is the overall operation that is intende
 ### Reproducibility
 Include:
 - OS (WIN | MACOS | Linux)
-- Pharus Version
+- DataJoint Element-Animal Version
 - MySQL Version
 - MySQL Deployment Strategy (local-native | local-docker | remote)
 - Minimum number of steps to reliably reproduce the issue
