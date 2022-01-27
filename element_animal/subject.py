@@ -141,11 +141,6 @@ class Subject(dj.Manual):
         subject_alias='' : varchar(32) # alias for lab, if different from id
         """
 
-    @classmethod
-    def make_nwb(cls, subject_key):
-        from .export import subject_to_nwb
-        return subject_to_nwb(subject_key)
-
 
 @schema
 class SubjectDeath(dj.Manual):
