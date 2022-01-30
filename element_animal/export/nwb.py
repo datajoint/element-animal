@@ -5,8 +5,8 @@ import pynwb
 from element_animal import subject
 
 
-def subject_to_nwb(subject_key):
-    subject_query = subject.Subject & subject_key
+def subject_to_nwb(session_key):
+    subject_query = subject.Subject & session_key
     subject_query = subject_query.join(subject.Subject.Line, left=True)
     subject_query = subject_query.join(subject.Subject.Strain, left=True)
     subject_query = subject_query.join(subject.Subject.Source, left=True)
