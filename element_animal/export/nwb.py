@@ -23,5 +23,5 @@ def subject_to_nwb(session_key):
         genotype=" x ".join(
             (subject.Line.Allele * subject.Subject.Line & subject_query).fetch("allele")
         ),
-        species=subject_info["species"],
+        #species=subject_info["species"],
     )
