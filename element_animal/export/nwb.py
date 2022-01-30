@@ -13,14 +13,15 @@ def subject_to_nwb(subject_key):
     subject_info = subject_query.fetch1()
 
     return pynwb.file.Subject(
-        subject_id=subject_info['subject'],
-        sex=subject_info['sex'],
-        date_of_birth=datetime.combine(subject_info['subject_birth_date'],
-                                       datetime.strptime('00:00:00', '%H:%M:%S'
-                                                         ).time()),
+        subject_id=subject_info["subject"],
+        sex=subject_info["sex"],
+        date_of_birth=datetime.combine(
+            subject_info["subject_birth_date"],
+            datetime.strptime("00:00:00", "%H:%M:%S").time(),
+        ),
         description=json.dumps(subject_info, default=str),
-        genotype=' x '.join((subject.Line.Allele * subject.Subject.Line
-                             & subject_key
-                             ).fetch('allele')),
-        species=subject_info['species']
+        genotype=" x ".join(
+            (subject.Line.Allele * subject.Subject.Line & subject_key).fetch("allele")
+        ),
+        species=subject_info["species"],
     )
