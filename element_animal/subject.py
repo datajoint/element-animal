@@ -108,6 +108,7 @@ class Subject(dj.Manual):
 
     class User(dj.Part):
         definition = """
+        # Individual responsible for subject management
         -> master
         -> User
         """
