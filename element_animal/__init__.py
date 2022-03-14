@@ -1,4 +1,4 @@
-__author__ = "DataJoint NEURO"
+__author__ = "DataJoint"
 __date__ = "December 15, 2020"
 __version__ = "0.0.1"
 
