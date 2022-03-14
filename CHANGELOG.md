@@ -18,5 +18,5 @@ Observes [Semantic Versioning](https://semver.org/spec/v2.0.0.html) standard and
 + Added `genotyping` schema
 
 
-[0.1.0b0]: https://github.com/datajoint/element-subject/compare/0.1.0a1...0.1.0b0
-[0.1.0a1]: https://github.com/datajoint/element-subject/releases/tag/0.1.0a1
+[0.1.0b0]: https://github.com/datajoint/element-animal/compare/0.1.0a1...0.1.0b0
+[0.1.0a1]: https://github.com/datajoint/element-animal/releases/tag/0.1.0a1
