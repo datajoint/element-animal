@@ -154,5 +154,5 @@ class Zygosity(dj.Manual):
     -> Subject
     -> Allele
     ---
-    zygosity        : enum("Present", "Absent", "Homozygous", "Heterozygous")  # zygosity
+    zygosity        : enum("Present", "Absent", "Homozygous", "Heterozygous")
     """
