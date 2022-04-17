@@ -40,9 +40,6 @@ pip install --upgrade element-animal
 
 + Also refer to the [workflow-calcium-imaging](https://github.com/datajoint/workflow-calcium-imaging) and [workflow-array-ephys](https://github.com/datajoint/workflow-array-ephys) repositories for example usages of `element-animal` when combining with other elements.
 
-+ See the [datajoint-elements](https://github.com/datajoint/datajoint-elements) repository for a detailed description of the DataJoint elements and workflows.
-
-
 ## Citation
 
 + If your work uses DataJoint and DataJoint Elements, please cite the respective Research Resource Identifiers (RRIDs) and manuscripts.
