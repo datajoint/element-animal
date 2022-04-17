@@ -1,11 +1,16 @@
 # DataJoint Element - Animal
 
+## Element architecture
+
 There are two modules in `element-animal`:
 + subject: contains the basic information of subject, including Strain, Line, Subject, Zygosity, and SubjectDeath information
 + genotyping: this module is designed for labs that keep track of colony management and genotyping results, containing information of breeding, weaning, housing, and genotyping.
 
-See [Background](Background.md) for the background information and development timeline.
+### Subject Diagram
+![subject diagram](images/subject_diagram.svg)
 
+### Genotyping Diagram
+![genotyping diagram](images/genotyping_diagram.svg)
 
 ## Installation
 ```
