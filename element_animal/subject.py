@@ -103,7 +103,6 @@ class Subject(dj.Manual):
     sex                     : enum('M', 'F', 'U')
     subject_birth_date      : date
     subject_description=''  : varchar(1024)
-    species=''              : varchar(128)        # if using NWB, latin name preferred
     """
 
     class Protocol(dj.Part):
