@@ -89,13 +89,14 @@ class BreedingPair(dj.Manual):
         definition = """
         -> master
         ---
-        -> subject.Subject
+        -> [nullable] subject.Subject.proj(father="subject")
         """
 
     class Mother(dj.Part):
         definition = """
         -> master
-        -> subject.Subject
+        ---
+        -> [nullable] subject.Subject.proj(mother="subject")
         """
 
 
