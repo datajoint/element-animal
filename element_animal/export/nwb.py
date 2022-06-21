@@ -2,7 +2,7 @@ from datetime import datetime
 import json
 import pynwb
 
-from element_animal import subject
+from .. import subject
 
 
 def subject_to_nwb(session_key):
