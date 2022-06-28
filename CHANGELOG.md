@@ -6,7 +6,7 @@ Observes [Semantic Versioning](https://semver.org/spec/v2.0.0.html) standard and
 
 + Add - Code of Conduct
 + Update - pull subject from parent directory in nwb export
-+ Update - for genotyping.BreedingPair part tables, project from Subject
++ Update - for genotyping.BreedingPair part tables, projection from Subject
     * genotyping.BreedingPair.Mother, change attribute to 'mother'
     * genotyping.BreedingPair.Father, change attribute to 'father'
  
@@ -26,7 +26,7 @@ Observes [Semantic Versioning](https://semver.org/spec/v2.0.0.html) standard and
 + Add - `subject` schema
 + Add - `genotyping` schema
 
-[0.1.1]: https://github.com/datajoint/element-animal/releases/tag/0.1.2
+[0.1.2]: https://github.com/datajoint/element-animal/releases/tag/0.1.2
 [0.1.1]: https://github.com/datajoint/element-animal/releases/tag/0.1.1
 [0.1.0b0]: https://github.com/datajoint/element-animal/releases/tag/0.1.0b0
 [0.1.0a1]: https://github.com/datajoint/element-animal/releases/tag/0.1.0a1
