@@ -17,10 +17,12 @@ There are two modules in `element-animal`:
 + genotyping: this module is designed for labs that keep track of colony management and genotyping results, containing information of breeding, weaning, housing, and genotyping.
 
 ### Subject Diagram
-![subject diagram](images/subject_diagram.svg)
+
+![](https://raw.githubusercontent.com/datajoint/element-animal/main/images/subject_diagram.svg)
 
 ### Genotyping Diagram
-![genotyping diagram](images/genotyping_diagram.svg)
+
+![](https://raw.githubusercontent.com/datajoint/element-animal/main/images/genotyping_diagram.svg)
 
 ## Installation
 ```
