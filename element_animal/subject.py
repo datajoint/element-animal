@@ -157,11 +157,13 @@ class SubjectDeath(dj.Manual):
 
 
 @schema
-class SubjectCullMethod(dj.Manual):
+class SubjectCull(dj.Manual):
     definition = """
     -> Subject
     ---
-    cull_method:    varchar(255)
+    cull_method='': varchar(255)
+    cull_reason='': varchar(255)
+    cull_notes='': varchar(1000)
     """
 
 
