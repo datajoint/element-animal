@@ -98,10 +98,10 @@ class Subject(dj.Manual):
     # Animal Subject
     subject                 : varchar(8)
     ---
+    subject_nickname=''     : varchar(64)
     sex                     : enum('M', 'F', 'U')
     subject_birth_date      : date
     subject_description=''  : varchar(1024)
-    subject_nickname=''     : varchar(64)
     """
 
     class Protocol(dj.Part):
@@ -152,14 +152,14 @@ class SubjectDeath(dj.Manual):
     definition = """
     -> Subject
     ---
-    death_date      : date       # death date
+    death_date: date       # death date
     """
 
 
 @schema
 class SubjectCull(dj.Manual):
     definition = """
-    -> Subject
+    -> SubjectDeath
     ---
     cull_method='': varchar(255)
     cull_reason='': varchar(255)
