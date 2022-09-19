@@ -145,7 +145,6 @@ class Cage(dj.Lookup):
 
 @schema
 class SubjectCaging(dj.Manual):
-
     definition = """
     # record of animal caging
     -> subject.Subject

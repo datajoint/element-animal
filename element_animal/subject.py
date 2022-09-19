@@ -56,7 +56,6 @@ class Strain(dj.Lookup):
 
 @schema
 class Allele(dj.Lookup):
-
     definition = """
     allele                    : varchar(32)  # abbreviated allele name
     ---
@@ -95,11 +94,11 @@ class Line(dj.Lookup):
 
 @schema
 class Subject(dj.Manual):
-
     definition = """
     # Animal Subject
     subject                 : varchar(8)
     ---
+    subject_nickname=''     : varchar(64)
     sex                     : enum('M', 'F', 'U')
     subject_birth_date      : date
     subject_description=''  : varchar(1024)
@@ -153,16 +152,18 @@ class SubjectDeath(dj.Manual):
     definition = """
     -> Subject
     ---
-    death_date      : date       # death date
+    death_date: date       # death date
     """
 
 
 @schema
-class SubjectCullMethod(dj.Manual):
+class SubjectCull(dj.Manual):
     definition = """
-    -> Subject
+    -> SubjectDeath
     ---
-    cull_method:    varchar(255)
+    cull_method='': varchar(255)
+    cull_reason='': varchar(255)
+    cull_notes='': varchar(1000)
     """
 
 
