@@ -5,7 +5,15 @@ import pynwb
 from .. import subject
 
 
-def subject_to_nwb(session_key):
+def subject_to_nwb(session_key: dict):
+    """Generate a dictionary object containing subject information.
+
+    Args:
+        session_key (dict): Key specifying one entry in element_animal.subject.Subject
+
+    Returns:
+        pynwb.file.Subject: NWB object
+    """
     subject_query = subject.Subject & session_key
     subject_query = subject_query.join(subject.Subject.Line, left=True)
     subject_query = subject_query.join(subject.Subject.Strain, left=True)
