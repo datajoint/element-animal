@@ -91,6 +91,11 @@ plugins:
   #       "index.md": "getting_started.md"
   - mkdocstrings:
       default_handler: python
+      handlers:
+        python:
+          rendering:
+            show_source: false
+            members_order: source
   - gen-files:
       scripts:
         - ./src/api/make_pages.py
