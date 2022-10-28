@@ -36,6 +36,7 @@ Observes [Semantic Versioning](https://semver.org/spec/v2.0.0.html) standard and
 + Add - `subject` schema
 + Add - `genotyping` schema
 
+[0.1.4]: https://github.com/datajoint/element-animal/releases/tag/0.1.4
 [0.1.3]: https://github.com/datajoint/element-animal/releases/tag/0.1.3
 [0.1.2]: https://github.com/datajoint/element-animal/releases/tag/0.1.2
 [0.1.1]: https://github.com/datajoint/element-animal/releases/tag/0.1.1
