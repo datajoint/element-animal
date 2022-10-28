@@ -28,15 +28,13 @@ def activate(
         linking_module (bool, optional): a module name or a module containing the
         required dependencies to activate the `subject` element:
 
-    Note:
-            Upstream tables:
-            + Source: the source of the material/resources
-                        (e.g. allele, animal) - typically refers to the
-                        vendor (e.g. Jackson Lab - JAX)
-            + Lab: the lab for which a particular animal belongs to
-            + Protocol: the protocol applicable to a particular animal
-                        (e.g. IACUC, IRB)
-            + User: the user associated with a particular animal
+    Dependencies:
+    Upstream tables:
+        Source: The source of the material/resources (e.g. allele, animal) - typically refers to the
+                    vendor (e.g. Jackson Lab - JAX).
+        Lab: The lab for which a particular animal belongs to.
+        Protocol: The protocol applicable to a particular animal (e.g. IACUC, IRB).
+        User: The user associated with a particular animal.
     """
     if isinstance(linking_module, str):
         linking_module = importlib.import_module(linking_module)
