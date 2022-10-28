@@ -94,9 +94,10 @@ plugins:
       default_handler: python
       handlers:
         python:
-          rendering:
-            show_source: false
+          options:
             members_order: source
+            group_by_category: false
+            line_length: 88
   - gen-files:
       scripts:
         - ./src/api/make_pages.py
