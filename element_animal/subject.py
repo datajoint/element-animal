@@ -145,7 +145,7 @@ class Subject(dj.Manual):
     Attributes:
         subject ( varchar(8) ): Subject ID.
         subject_nickname ( varchar(8) ): Subject nickname.
-        sex ( varchar(8) ): ('M' or 'F' or 'U')
+        sex (enum): 'M', 'F', or 'U'; Male, Female, or Unknown
         subject_birth_date (date): Birth date of the subject.
         subject_description ( varchar(1024) ): Description of the subject.
     """
