@@ -35,6 +35,7 @@ def activate(
                         (e.g. IACUC, IRB)
             + User: the user associated with a particular animal
     """
+
     if isinstance(linking_module, str):
         linking_module = importlib.import_module(linking_module)
     assert inspect.ismodule(linking_module), (
@@ -249,7 +250,7 @@ class SubjectDeath(dj.Manual):
 
     Attributes:
         Subject (foreign key): Subject key.
-        date_date (date) : Death date
+        date_date (date) : Death date.
     """
 
     definition = """
