@@ -18,22 +18,22 @@ def activate(
     Args:
         schema_name (str): schema name on the database server to activate the
                         `subject` element
-        create_schema (bool, optional): when True (default), create schema in the
+        create_schema (bool): when True (default), create schema in the
                             database if it does not yet exist.
-        create_tables (bool, optional): when True (default), create tables in the
+        create_tables (bool): when True (default), create tables in the
                             database if they do not yet exist.
-        linking_module (bool, optional): a module name or a module containing the
+        linking_module (bool): a module name or a module containing the
         required dependencies to activate the `subject` element:
 
-    Note:
-            Upstream tables:
-            + Source: the source of the material/resources
-                        (e.g. allele, animal) - typically refers to the
-                        vendor (e.g. Jackson Lab - JAX)
-            + Lab: the lab for which a particular animal belongs to
-            + Protocol: the protocol applicable to a particular animal
-                        (e.g. IACUC, IRB)
-            + User: the user associated with a particular animal
+    Dependencies:
+    Upstream tables:
+        Source: The source of the material/resources
+                    (e.g. allele, animal) - typically refers to the
+                    vendor (e.g. Jackson Lab - JAX)
+        Lab: The lab for which a particular animal belongs to
+        Protocol: the protocol applicable to a particular animal
+                    (e.g. IACUC, IRB)
+        User: the user associated with a particular animal
     """
 
     if isinstance(linking_module, str):
@@ -52,7 +52,7 @@ def activate(
 
 @schema
 class Strain(dj.Lookup):
-    """Genetic strain of an animal. (e.g. C57Bl/6)
+    """Genetic strain of an animal. (e.g. C57Bl/6).
 
     Attributes:
         strain ( varchar(32) ): Abbreviated strain name.
@@ -246,7 +246,7 @@ class Subject(dj.Manual):
 
 @schema
 class SubjectDeath(dj.Manual):
-    """Subject death information
+    """Subject death information.
 
     Attributes:
         Subject (foreign key): Subject key.
@@ -262,7 +262,7 @@ class SubjectDeath(dj.Manual):
 
 @schema
 class SubjectCull(dj.Manual):
-    """Subject culling information
+    """Subject culling information.
 
     Attributes:
         SubjectDeath (foreign key): SubjectDeath key.

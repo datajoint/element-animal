@@ -214,7 +214,7 @@ class Cage(dj.Lookup):
 
 @schema
 class SubjectCaging(dj.Manual):
-    """Information about a subject and its cage.
+    """Information about subject and its cage.
 
     Attributes:
         subject.Subject (foreign key): subject.Subject key.
