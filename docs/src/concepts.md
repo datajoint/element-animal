@@ -28,3 +28,35 @@ There are two modules in `element-animal`:
 ### Genotyping Diagram
 
 ![](https://raw.githubusercontent.com/datajoint/element-animal/main/images/genotyping_diagram.svg)
+
+
+### `subject` schema ([API docs](https://datajoint.com/docs/elements/element-animal/api/element_animal/subject))
+- Although not required, most choose to connect the `Session` table to a `Subject` table.
+
+| Table        | Description                                 |
+| ------------ | ------------------------------------------- |
+| Strain       | Genetic strain of an animal. (e.g. C57Bl/6) |
+| Allele       | Store allele information                    |
+| Line         | Genetic line                                |
+| Subject      | Animal subject information                  |
+| SubjectDeath | Subject death information                   |
+| SubjectCull  | Subject culling information                 |
+| Zygosity     | Information about zygosity of a subject     |
+
+
+
+### `genotyping` schema ([API docs](https://datajoint.com/docs/elements/element-animal/api/element_animal/genotyping))
+
+| Table          | Description                                                         |
+| -------------- | ------------------------------------------------------------------- |
+| Sequence       | Gene sequence information                                           |
+| AlleleSequence | Allele sequence information                                         |
+| BreedingPair   | Information about male-female pair used for breeding                |
+| Litter         | Information about litter (group of animals born to a breeding pair) |
+| Weaning        | Information about weaning (maternal separation)                     |
+| SubjectLitter  | Subject and its litter                                              |
+| Cage           | Cage information                                                    |
+| SubjectCaging  | Information about subject and its cage.                             |
+| GenotypeTest   | Information about genotype test                                     |
+
+
