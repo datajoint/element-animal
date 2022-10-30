@@ -1,5 +1,7 @@
 # DataJoint Element - Animal
 
+ Most analysis pipelines in neuroscience begin with some information about the experiment animal subjects. This includes general information such as source, date of birth, sex, owner, and death information. In addition, many labs perform their own genotyping of the animal subjects while others rely on the animal care facility to perform it centrally. Most labs want to track the zygosity information of the animals. Those labs that perform their own genotyping need to keep track of additional information such as the breeding pairs, litters, weaning, caging, and genotyping tests.
+
 + `element-animal` features a DataJoint pipeline design for subject and genotyping management. 
 
 + `element-animal` is not a complete workflow by itself, but rather a modular design of tables and dependencies. 
