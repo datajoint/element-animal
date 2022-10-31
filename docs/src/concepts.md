@@ -3,7 +3,7 @@
 
 ## Usage of animal subjects in neuroscience
 
- Most analysis pipelines in neuroscience begin with some information about the experiment animal subjects. This includes general information such as source, date of birth, sex, owner, and death information. In addition, many labs perform their own genotyping of the animal subjects while others rely on the animal care facility to perform it centrally. Most labs want to track the zygosity information of the animals. Those labs that perform their own genotyping need to keep track of additional information such as the breeding pairs, litters, weaning, caging, and genotyping tests.
+Many data pipelines in neuroscience retain information about the experimental subjects (e.g., date of birth, sex). For animal models, this can also include owner, cage and sacrificing information. Many researchers also retain genotyping information (e.g., line, zygosity). Labs that perform their own genotyping need to keep track of even more information, such as breeding pairs, litters, and genotyping tests. Element Animal can help researchers organize all this information in connection with a broader experimental pipeline. 
 
 ## Key Partnerships
 
