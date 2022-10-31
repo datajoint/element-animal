@@ -18,7 +18,9 @@ Through our interviews and direct collaboration with the precursor projects, we 
 ## Element architecture
 
 There are two modules in `element-animal`:
+
 + subject: contains the basic information of subject, including Strain, Line, Subject, Zygosity, and SubjectDeath information
+  
 + genotyping: this module is designed for labs that keep track of colony management and genotyping results, containing information of breeding, weaning, housing, and genotyping.
 
 ### Subject Diagram
