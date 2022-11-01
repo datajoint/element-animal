@@ -83,3 +83,6 @@ ENV/
 dj_local_c*.json
 temp*
 *nwb
+
+# mkdocs documentation
+docs/site
