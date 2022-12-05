@@ -150,8 +150,8 @@ class Implantation(dj.Manual):
     -> subject.Subject
     implant_date  : datetime   # surgery date
     -> ImplantationType
-    -> BrainRegion
-    -> Hemisphere
+    -> BrainRegion   # intended/targeted brain region for this particular implantation
+    -> Hemisphere   # intended/targeted hemisphere for this particular implantation
     ---
     -> User.proj(surgeon='user')            # surgeon
     ap            : decimal(6, 3)           # (um) anterior-posterior; ref is 0
