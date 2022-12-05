@@ -134,33 +134,36 @@ class Implantation(dj.Manual):
     Attributes:
         Session (foreign key): Session primary key
         location_id (int): ID of of brain location
-        ap_location ( decimal(6, 2) ): In um, Anterior/posterior; Anterior Positive
-        ml_location ( decimal(6, 2) ): In um, medial axis; Right Positive
-        depth ( decimal(6, 2) ): In um, Relative to surface (0); Ventral Negative
-        theta ( decimal(5, 2) ): Elevation in degrees. Rotation about
-            ml-axis [0, 180] WRT Z
-        phi ( decimal(5, 2) ): Azimuth in degrees. Rotations about
-            dv-axis [0, 360] WRT X
-        SkullReference (foreign key): SkullReference primary key
-        light_intensity ( decimal(6, 2) ): (mW/mm2) light intensity at this location
-        description ( varchar(255), nullable): brain location description
+        ap ( decimal(6, 3) ): In um, Anterior/posterior; Anterior Positive
+        ap_reference (projected attribute): Coordinate reference
+        ml ( decimal(6, 3) ): In um, medial axis; Right Positive
+        ml_reference (projected attribute): Coordinate reference
+        dv ( decimal(6, 3) ): In um, dorso-ventral axis. Ventral negative
+        dv_reference (projected attribute): Coordinate reference
+        theta ( decimal(6, 3), nullable ): Elevation in degrees.
+            Rotation about ml-axis [0, 180] WRT Z
+        phi ( decimal(6, 3), nullable ): Azimuth in degrees.
+            Rotations about dv-axis [0, 360] WRT X
+        beta ( decimal(6, 3), nullable ): Rotation about shank in degrees.
+            Rotation about the shank [-180, 180]. Clockwise is increasing.
+            0 is the probe-front facing anterior
     """
 
     definition = """
     -> subject.Subject
-    implant_date  : datetime   # surgery date
+    implant_date  : datetime       # surgery date
     -> ImplantationType
-    -> BrainRegion   # intended/targeted brain region for this particular implantation
-    -> Hemisphere   # intended/targeted hemisphere for this particular implantation
+    -> BrainRegion                 # targeted brain region for this implantation
+    -> Hemisphere                  # targeted hemisphere for this implantation
     ---
-    -> User.proj(surgeon='user')            # surgeon
-    ap            : decimal(6, 3)           # (um) anterior-posterior; ref is 0
+    -> User.proj(surgeon='user')   # surgeon
+    ap            : decimal(6, 3)  # (um) anterior-posterior; ref is 0
     -> CoordinateReference.proj(ap_ref='reference')
-    ml            : decimal(6, 3)           # (um) medial axis; ref is 0 
+    ml            : decimal(6, 3)  # (um) medial axis; ref is 0
     -> CoordinateReference.proj(ml_ref='reference')
-    dv            : decimal(6, 3)           # (um) dorso-ventral axis; ref is 0; more ventral is more negative
+    dv            : decimal(6, 3)  # (um) dorso-ventral axis; ventral negative
     -> CoordinateReference.proj(dv_ref='reference')
-    theta=null    : decimal(6, 3)           # (deg) rotation about the ml-axis [0, 180] - w.r.t the z+ axis
-    phi=null      : decimal(6, 3)           # (deg) rotation about the dv-axis [0, 360] - w.r.t the x+ axis
-    beta=null     : decimal(6, 3)           # (deg) rotation about the shank [-180, 180] - clockwise is increasing in degree - 0 is the probe-front facing anterior
+    theta=null    : decimal(6, 3)  # (deg) rot about ml-axis [0, 180] wrt z
+    phi=null      : decimal(6, 3)  # (deg) rot about dv-axis [0, 360] wrt x
+    beta=null     : decimal(6, 3)  # (deg) rot about shank [-180, 180] wrt anterior
     """
