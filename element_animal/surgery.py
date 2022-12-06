@@ -134,11 +134,11 @@ class Implantation(dj.Manual):
     Attributes:
         Session (foreign key): Session primary key
         location_id (int): ID of of brain location
-        ap ( decimal(6, 3) ): In um, Anterior/posterior; Anterior Positive
+        ap ( decimal(6, 3) ): In mm, Anterior/posterior; Anterior Positive
         ap_reference (projected attribute): Coordinate reference
-        ml ( decimal(6, 3) ): In um, medial axis; Right Positive
+        ml ( decimal(6, 3) ): In mm, medial axis; Right Positive
         ml_reference (projected attribute): Coordinate reference
-        dv ( decimal(6, 3) ): In um, dorso-ventral axis. Ventral negative
+        dv ( decimal(6, 3) ): In mm, dorso-ventral axis. Ventral negative
         dv_reference (projected attribute): Coordinate reference
         theta ( decimal(6, 3), nullable ): Elevation in degrees.
             Rotation about ml-axis [0, 180] WRT Z
@@ -157,11 +157,11 @@ class Implantation(dj.Manual):
     -> Hemisphere                  # targeted hemisphere for this implantation
     ---
     -> User.proj(surgeon='user')   # surgeon
-    ap            : decimal(6, 3)  # (um) anterior-posterior; ref is 0
+    ap            : decimal(6, 3)  # (mm) anterior-posterior; ref is 0
     -> CoordinateReference.proj(ap_ref='reference')
-    ml            : decimal(6, 3)  # (um) medial axis; ref is 0
+    ml            : decimal(6, 3)  # (mm) medial axis; ref is 0
     -> CoordinateReference.proj(ml_ref='reference')
-    dv            : decimal(6, 3)  # (um) dorso-ventral axis; ventral negative
+    dv            : decimal(6, 3)  # (mm) dorso-ventral axis; ventral negative
     -> CoordinateReference.proj(dv_ref='reference')
     theta=null    : decimal(6, 3)  # (deg) rot about ml-axis [0, 180] wrt z
     phi=null      : decimal(6, 3)  # (deg) rot about dv-axis [0, 360] wrt x
