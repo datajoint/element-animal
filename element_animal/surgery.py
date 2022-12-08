@@ -157,7 +157,7 @@ class Implantation(dj.Manual):
     -> Hemisphere.proj(target_hemisphere='hemisphere')
     ---
     -> User.proj(surgeon='user')         # surgeon
-    implant_comment='' . : varchar(1024) # Comments about the implant
+    implant_comment=''  : varchar(1024) # Comments about the implant
     """
 
     class Coordinate(dj.Part):
