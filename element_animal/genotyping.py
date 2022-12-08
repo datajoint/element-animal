@@ -38,9 +38,12 @@ def activate(
     """
     if isinstance(linking_module, str):
         linking_module = importlib.import_module(linking_module)
-    assert inspect.ismodule(linking_module), (
-        "The argument 'dependency' must " + "be a module's name or a module"
-    )
+    assert inspect.ismodule(
+        linking_module
+    ), "The argument 'linking_module' must be a module's name or a module"
+    
+    global _linking_module
+    _linking_module = linking_module
 
     subject.activate(
         subject_schema_name,
