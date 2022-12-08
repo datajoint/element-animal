@@ -65,7 +65,7 @@ class CoordinateReference(dj.Lookup):
     """
 
     definition = """
-    reference   : varchar(60)
+    reference   : varchar(32)
     """
     contents = zip(
         ["bregma", "lambda", "dura", "skull_surface", "sagittal_suture", "sinus"]
@@ -84,7 +84,7 @@ class BrainRegion(dj.Manual):
     definition = """
     region_acronym : varchar(32)   # Brain region shorthand
     ---
-    region_name    : varchar(128)  # Brain region full name
+    region_name    : varchar(256)  # Brain region full name
     """
 
 
@@ -134,36 +134,43 @@ class Implantation(dj.Manual):
     Attributes:
         Session (foreign key): Session primary key
         location_id (int): ID of of brain location
-        ap ( decimal(6, 3) ): In mm, Anterior/posterior; Anterior Positive
+        ap ( float ): In mm, Anterior/posterior; Anterior Positive
         ap_reference (projected attribute): Coordinate reference
-        ml ( decimal(6, 3) ): In mm, medial axis; Right Positive
+        ml ( float ): In mm, medial axis; Right Positive
         ml_reference (projected attribute): Coordinate reference
-        dv ( decimal(6, 3) ): In mm, dorso-ventral axis. Ventral negative
+        dv ( float ): In mm, dorso-ventral axis. Ventral negative
         dv_reference (projected attribute): Coordinate reference
-        theta ( decimal(6, 3), nullable ): Elevation in degrees.
+        theta ( float, nullable ): Elevation in degrees.
             Rotation about ml-axis [0, 180] WRT Z
-        phi ( decimal(6, 3), nullable ): Azimuth in degrees.
+        phi ( float, nullable ): Azimuth in degrees.
             Rotations about dv-axis [0, 360] WRT X
-        beta ( decimal(6, 3), nullable ): Rotation about shank in degrees.
+        beta ( float, nullable ): Rotation about shank in degrees.
             Rotation about the shank [-180, 180]. Clockwise is increasing.
             0 is the probe-front facing anterior
     """
 
     definition = """
     -> subject.Subject
-    implant_date  : datetime       # surgery date
+    implant_date        : datetime       # surgery date
     -> ImplantationType
-    -> BrainRegion                 # targeted brain region for this implantation
-    -> Hemisphere                  # targeted hemisphere for this implantation
+    -> BrainRegion.proj(target_region='region_acronym')
+    -> Hemisphere.proj(target_hemisphere='hemisphere')
     ---
-    -> User.proj(surgeon='user')   # surgeon
-    ap            : decimal(6, 3)  # (mm) anterior-posterior; ref is 0
-    -> CoordinateReference.proj(ap_ref='reference')
-    ml            : decimal(6, 3)  # (mm) medial axis; ref is 0
-    -> CoordinateReference.proj(ml_ref='reference')
-    dv            : decimal(6, 3)  # (mm) dorso-ventral axis; ventral negative
-    -> CoordinateReference.proj(dv_ref='reference')
-    theta=null    : decimal(6, 3)  # (deg) rot about ml-axis [0, 180] wrt z
-    phi=null      : decimal(6, 3)  # (deg) rot about dv-axis [0, 360] wrt x
-    beta=null     : decimal(6, 3)  # (deg) rot about shank [-180, 180] wrt anterior
+    -> User.proj(surgeon='user')         # surgeon
+    implant_comment='' . : varchar(1024) # Comments about the implant
     """
+
+    class Coordinate(dj.Part):
+        definition = """
+        -> master
+        ---
+        ap=null       : float  # (mm) anterior-posterior; ref is 0
+        -> [nullable] CoordinateReference.proj(ap_ref='reference')
+        ml=null       : float  # (mm) medial axis; ref is 0
+        -> [nullable] CoordinateReference.proj(ml_ref='reference')
+        dv=null       : float  # (mm) dorso-ventral axis; ventral negative
+        -> [nullable] CoordinateReference.proj(dv_ref='reference')
+        theta=null    : float  # (deg) rot about ml-axis [0, 180] wrt z
+        phi=null      : float  # (deg) rot about dv-axis [0, 360] wrt x
+        beta=null     : float  # (deg) rot about shank [-180, 180] wrt anterior
+        """
