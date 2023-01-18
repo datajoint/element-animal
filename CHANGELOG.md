@@ -4,12 +4,13 @@ Observes [Semantic Versioning](https://semver.org/spec/v2.0.0.html) standard and
 
 ## [0.1.5] - Unreleased
 
-- Added - `surgery` schema
-- Added - mkdocs documentation
+- Add - `surgery` schema
+- Add - mkdocs documentation
+- Update - string typing for NWB export of Species
 
 ## [0.1.4] - 2022-08-30
 
-- Added - "subject_nickname" into Subject table
+- Add - "subject_nickname" into Subject table
 - Update - rework "SubjectCull" table
 
 ## [0.1.3] - 2022-07-06
@@ -18,7 +19,7 @@ Observes [Semantic Versioning](https://semver.org/spec/v2.0.0.html) standard and
 
 ## [0.1.2] - 2022-06-27
 
-- Added - Code of Conduct
+- Add - Code of Conduct
 - Update - pull subject from parent directory in nwb export
 - Update - for genotyping.BreedingPair part tables, projection from Subject
   - genotyping.BreedingPair.Mother, change attribute to 'mother'
@@ -26,9 +27,9 @@ Observes [Semantic Versioning](https://semver.org/spec/v2.0.0.html) standard and
 
 ## [0.1.1] - 2022-05-10
 
-- Added - NWB export
+- Add - NWB export
 - Update - Shorten subject primary key to varchar(8)
-- Added - Adopt black formatting into code base
+- Add - Adopt black formatting into code base
 
 ## [0.1.0b0] - 2021-05-07
 
@@ -36,9 +37,9 @@ Observes [Semantic Versioning](https://semver.org/spec/v2.0.0.html) standard and
 
 ## [0.1.0a1] - 2021-05-03
 
-- Added - GitHub Action release process
-- Added - `subject` schema
-- Added - `genotyping` schema
+- Add - GitHub Action release process
+- Add - `subject` schema
+- Add - `genotyping` schema
 
 [0.1.5]: https://github.com/datajoint/element-animal/releases/tag/0.1.5
 [0.1.4]: https://github.com/datajoint/element-animal/releases/tag/0.1.4
