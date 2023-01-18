@@ -16,7 +16,7 @@ nav:
 # Markdown in mkdocs
 # 01. Redering concatenates across single line breaks. This means...
 #     A. We have to be careful to add extra line breaks around paragraphs,
-#        including between the end of a pgf and the beginnign of bullets.
+#        including between the end of a pgf and the begining of bullets.
 #     B. We can use hard wrapping to make github reviews easier to read.
 #        VSCode Rewrap extension offers a keyboard shortcut for hard wrap
 #        at the ruler, but don't add breaks in [multiword links](example.com)
@@ -43,7 +43,7 @@ nav:
 #     HOST_UID=$(id -u) docker compose -f docs/docker-compose.yaml up --build
 #     ```
 # 02. Site analytics depend on a local environment variable GOOGLE_ANALYTICS_KEY
-#     You can find this in LastPass or declare with any string to suprress errors
+#     You can find this in LastPass or declare with any string to suppress errors
 # 03. The API section will pull docstrings.
 #     A. Follow google styleguide e.g.,
 #        https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html

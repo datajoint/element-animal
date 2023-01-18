@@ -1,8 +1,9 @@
-import datajoint as dj
 import importlib
 import inspect
-from . import subject
 
+import datajoint as dj
+
+from . import subject
 
 schema = dj.schema()
 
@@ -41,7 +42,7 @@ def activate(
     assert inspect.ismodule(
         linking_module
     ), "The argument 'linking_module' must be a module's name or a module"
-    
+
     global _linking_module
     _linking_module = linking_module
 
