@@ -16,7 +16,7 @@ nav:
 # Markdown in mkdocs
 # 01. Redering concatenates across single line breaks. This means...
 #     A. We have to be careful to add extra line breaks around paragraphs,
-#        including between the end of a pgf and the begining of bullets.
+#        including between the end of a pgf and the beginning of bullets.
 #     B. We can use hard wrapping to make github reviews easier to read.
 #        VSCode Rewrap extension offers a keyboard shortcut for hard wrap
 #        at the ruler, but don't add breaks in [multiword links](example.com)
