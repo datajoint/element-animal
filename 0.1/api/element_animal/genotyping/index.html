@@ -10,8 +10,14 @@
       
         <link rel="canonical" href="http://localhost/docs/elements/element-animal/0.1/api/element_animal/genotyping/">
       
+      
+        <link rel="prev" href="../export/nwb/">
+      
+      
+        <link rel="next" href="../subject/">
+      
       <link rel="icon" href="../../../assets/images/company-logo-blue.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.6">
     
     
       
@@ -19,11 +25,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.975780f9.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.558e4712.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.2505c338.min.css">
-        
       
       
 
@@ -141,8 +146,6 @@
       <form class="md-header__option" data-md-component="palette">
         
           
-          
-          
           <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="datajoint" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
           
             <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
@@ -150,8 +153,6 @@
             </label>
           
         
-          
-          
           
           <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
           
@@ -190,7 +191,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -234,7 +235,7 @@
 
 
 
-<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="" data-md-level="0">
     <label class="md-nav__title" for="__drawer">
         <a href="../../.." title="DataJoint Documentation"
             class="md-nav__button md-logo" aria-label="DataJoint Documentation" data-md-component="logo">
@@ -344,12 +345,13 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5">
+        <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="true">
           API
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -372,12 +374,13 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" checked>
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" checked>
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5_1">
+        <label class="md-nav__link" for="__nav_5_1" tabindex="0" aria-expanded="true">
           element_animal
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -398,12 +401,13 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1_1" type="checkbox" id="__nav_5_1_1" >
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5_1_1" type="checkbox" id="__nav_5_1_1" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_5_1_1">
+        <label class="md-nav__link" for="__nav_5_1_1" tabindex="0" aria-expanded="false">
           export
           <span class="md-nav__icon md-icon"></span>
         </label>
@@ -662,6 +666,7 @@
                   
 
 
+
   <h1>genotyping.py</h1>
 
 <div class="doc doc-object doc-module">
@@ -783,8 +788,7 @@ User: The user associated with a particular animal.</p>
 </details>
       <details class="quote">
         <summary>Source code in <code>element_animal/genotyping.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">10</span>
-<span class="normal">11</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">11</span>
 <span class="normal">12</span>
 <span class="normal">13</span>
 <span class="normal">14</span>
@@ -832,14 +836,15 @@ User: The user associated with a particular animal.</p>
 <span class="normal">56</span>
 <span class="normal">57</span>
 <span class="normal">58</span>
-<span class="normal">59</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">activate</span><span class="p">(</span>
+<span class="normal">59</span>
+<span class="normal">60</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">activate</span><span class="p">(</span>
     <span class="n">genotyping_schema_name</span><span class="p">,</span>
     <span class="n">subject_schema_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">create_schema</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">create_tables</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">linking_module</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Activate this schema.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Activate this schema.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        genotyping_schema_name (str): schema name on the database server to</span>
@@ -948,8 +953,7 @@ User: The user associated with a particular animal.</p>
 
         <details class="quote">
           <summary>Source code in <code>element_animal/genotyping.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">62</span>
-<span class="normal">63</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">63</span>
 <span class="normal">64</span>
 <span class="normal">65</span>
 <span class="normal">66</span>
@@ -963,9 +967,10 @@ User: The user associated with a particular animal.</p>
 <span class="normal">74</span>
 <span class="normal">75</span>
 <span class="normal">76</span>
-<span class="normal">77</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@schema</span>
+<span class="normal">77</span>
+<span class="normal">78</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@schema</span>
 <span class="k">class</span> <span class="nc">Sequence</span><span class="p">(</span><span class="n">dj</span><span class="o">.</span><span class="n">Lookup</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Gene sequence information.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gene sequence information.</span>
 
 <span class="sd">    Attributes:</span>
 <span class="sd">        sequence ( varchar(32) ): Abbreviated sequence name</span>
@@ -1049,8 +1054,7 @@ User: The user associated with a particular animal.</p>
 
         <details class="quote">
           <summary>Source code in <code>element_animal/genotyping.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">80</span>
-<span class="normal">81</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">81</span>
 <span class="normal">82</span>
 <span class="normal">83</span>
 <span class="normal">84</span>
@@ -1061,9 +1065,10 @@ User: The user associated with a particular animal.</p>
 <span class="normal">89</span>
 <span class="normal">90</span>
 <span class="normal">91</span>
-<span class="normal">92</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@schema</span>
+<span class="normal">92</span>
+<span class="normal">93</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@schema</span>
 <span class="k">class</span> <span class="nc">AlleleSequence</span><span class="p">(</span><span class="n">dj</span><span class="o">.</span><span class="n">Lookup</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Allele sequence information.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Allele sequence information.</span>
 
 <span class="sd">    Attributes:</span>
 <span class="sd">        subject.Allele (foreign key): subject.Allele key.</span>
@@ -1158,8 +1163,7 @@ User: The user associated with a particular animal.</p>
 
         <details class="quote">
           <summary>Source code in <code>element_animal/genotyping.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 95</span>
-<span class="normal"> 96</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 96</span>
 <span class="normal"> 97</span>
 <span class="normal"> 98</span>
 <span class="normal"> 99</span>
@@ -1204,9 +1208,10 @@ User: The user associated with a particular animal.</p>
 <span class="normal">138</span>
 <span class="normal">139</span>
 <span class="normal">140</span>
-<span class="normal">141</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@schema</span>
+<span class="normal">141</span>
+<span class="normal">142</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@schema</span>
 <span class="k">class</span> <span class="nc">BreedingPair</span><span class="p">(</span><span class="n">dj</span><span class="o">.</span><span class="n">Manual</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Information about male-female pair used for breeding.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Information about male-female pair used for breeding.</span>
 
 <span class="sd">    Attributes:</span>
 <span class="sd">        breeding_pair ( varchar(24) ): Pair identifier.</span>
@@ -1225,7 +1230,7 @@ User: The user associated with a particular animal.</p>
 <span class="s2">    &quot;&quot;&quot;</span>
 
     <span class="k">class</span> <span class="nc">Father</span><span class="p">(</span><span class="n">dj</span><span class="o">.</span><span class="n">Part</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Information about male breeder.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Information about male breeder.</span>
 
 <span class="sd">        Attributes:</span>
 <span class="sd">            BreedingPair (foreign key): BreedingPair key.</span>
@@ -1239,7 +1244,7 @@ User: The user associated with a particular animal.</p>
 <span class="s2">        &quot;&quot;&quot;</span>
 
     <span class="k">class</span> <span class="nc">Mother</span><span class="p">(</span><span class="n">dj</span><span class="o">.</span><span class="n">Part</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Information about female breeder.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Information about female breeder.</span>
 
 <span class="sd">        Attributes:</span>
 <span class="sd">            BreedingPair (foreign key): BreedingPair key.</span>
@@ -1312,8 +1317,7 @@ User: The user associated with a particular animal.</p>
 
         <details class="quote">
           <summary>Source code in <code>element_animal/genotyping.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">115</span>
-<span class="normal">116</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">116</span>
 <span class="normal">117</span>
 <span class="normal">118</span>
 <span class="normal">119</span>
@@ -1324,8 +1328,9 @@ User: The user associated with a particular animal.</p>
 <span class="normal">124</span>
 <span class="normal">125</span>
 <span class="normal">126</span>
-<span class="normal">127</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Father</span><span class="p">(</span><span class="n">dj</span><span class="o">.</span><span class="n">Part</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Information about male breeder.</span>
+<span class="normal">127</span>
+<span class="normal">128</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Father</span><span class="p">(</span><span class="n">dj</span><span class="o">.</span><span class="n">Part</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Information about male breeder.</span>
 
 <span class="sd">    Attributes:</span>
 <span class="sd">        BreedingPair (foreign key): BreedingPair key.</span>
@@ -1407,8 +1412,7 @@ User: The user associated with a particular animal.</p>
 
         <details class="quote">
           <summary>Source code in <code>element_animal/genotyping.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">129</span>
-<span class="normal">130</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">130</span>
 <span class="normal">131</span>
 <span class="normal">132</span>
 <span class="normal">133</span>
@@ -1419,8 +1423,9 @@ User: The user associated with a particular animal.</p>
 <span class="normal">138</span>
 <span class="normal">139</span>
 <span class="normal">140</span>
-<span class="normal">141</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Mother</span><span class="p">(</span><span class="n">dj</span><span class="o">.</span><span class="n">Part</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Information about female breeder.</span>
+<span class="normal">141</span>
+<span class="normal">142</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Mother</span><span class="p">(</span><span class="n">dj</span><span class="o">.</span><span class="n">Part</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Information about female breeder.</span>
 
 <span class="sd">    Attributes:</span>
 <span class="sd">        BreedingPair (foreign key): BreedingPair key.</span>
@@ -1525,8 +1530,7 @@ User: The user associated with a particular animal.</p>
 
         <details class="quote">
           <summary>Source code in <code>element_animal/genotyping.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">144</span>
-<span class="normal">145</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">145</span>
 <span class="normal">146</span>
 <span class="normal">147</span>
 <span class="normal">148</span>
@@ -1542,9 +1546,10 @@ User: The user associated with a particular animal.</p>
 <span class="normal">158</span>
 <span class="normal">159</span>
 <span class="normal">160</span>
-<span class="normal">161</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@schema</span>
+<span class="normal">161</span>
+<span class="normal">162</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@schema</span>
 <span class="k">class</span> <span class="nc">Litter</span><span class="p">(</span><span class="n">dj</span><span class="o">.</span><span class="n">Manual</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Information about litter (group of animals born to a breeding pair).</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Information about litter (group of animals born to a breeding pair).</span>
 
 <span class="sd">    Attributes:</span>
 <span class="sd">        BreedingPair (foreign key): BreedingPair key.</span>
@@ -1651,8 +1656,7 @@ User: The user associated with a particular animal.</p>
 
         <details class="quote">
           <summary>Source code in <code>element_animal/genotyping.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">164</span>
-<span class="normal">165</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">165</span>
 <span class="normal">166</span>
 <span class="normal">167</span>
 <span class="normal">168</span>
@@ -1670,9 +1674,10 @@ User: The user associated with a particular animal.</p>
 <span class="normal">180</span>
 <span class="normal">181</span>
 <span class="normal">182</span>
-<span class="normal">183</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@schema</span>
+<span class="normal">183</span>
+<span class="normal">184</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@schema</span>
 <span class="k">class</span> <span class="nc">Weaning</span><span class="p">(</span><span class="n">dj</span><span class="o">.</span><span class="n">Manual</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Information about weaning (maternal separation).</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Information about weaning (maternal separation).</span>
 
 <span class="sd">    Attributes:</span>
 <span class="sd">        Litter (foreign key): Litter key.</span>
@@ -1760,8 +1765,7 @@ User: The user associated with a particular animal.</p>
 
         <details class="quote">
           <summary>Source code in <code>element_animal/genotyping.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">186</span>
-<span class="normal">187</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">187</span>
 <span class="normal">188</span>
 <span class="normal">189</span>
 <span class="normal">190</span>
@@ -1773,9 +1777,10 @@ User: The user associated with a particular animal.</p>
 <span class="normal">196</span>
 <span class="normal">197</span>
 <span class="normal">198</span>
-<span class="normal">199</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@schema</span>
+<span class="normal">199</span>
+<span class="normal">200</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@schema</span>
 <span class="k">class</span> <span class="nc">SubjectLitter</span><span class="p">(</span><span class="n">dj</span><span class="o">.</span><span class="n">Manual</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Subject and its litter.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Subject and its litter.</span>
 
 <span class="sd">    Attributes:</span>
 <span class="sd">        subject.Subject (foreign key): subject.Subject key.</span>
@@ -1857,8 +1862,7 @@ User: The user associated with a particular animal.</p>
 
         <details class="quote">
           <summary>Source code in <code>element_animal/genotyping.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">202</span>
-<span class="normal">203</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">203</span>
 <span class="normal">204</span>
 <span class="normal">205</span>
 <span class="normal">206</span>
@@ -1870,9 +1874,10 @@ User: The user associated with a particular animal.</p>
 <span class="normal">212</span>
 <span class="normal">213</span>
 <span class="normal">214</span>
-<span class="normal">215</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@schema</span>
+<span class="normal">215</span>
+<span class="normal">216</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@schema</span>
 <span class="k">class</span> <span class="nc">Cage</span><span class="p">(</span><span class="n">dj</span><span class="o">.</span><span class="n">Lookup</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Cage information.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Cage information.</span>
 
 <span class="sd">    Attributes:</span>
 <span class="sd">        cage ( varchar(32) ): Cage identifier.</span>
@@ -1968,8 +1973,7 @@ User: The user associated with a particular animal.</p>
 
         <details class="quote">
           <summary>Source code in <code>element_animal/genotyping.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">218</span>
-<span class="normal">219</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">219</span>
 <span class="normal">220</span>
 <span class="normal">221</span>
 <span class="normal">222</span>
@@ -1986,9 +1990,10 @@ User: The user associated with a particular animal.</p>
 <span class="normal">233</span>
 <span class="normal">234</span>
 <span class="normal">235</span>
-<span class="normal">236</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@schema</span>
+<span class="normal">236</span>
+<span class="normal">237</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@schema</span>
 <span class="k">class</span> <span class="nc">SubjectCaging</span><span class="p">(</span><span class="n">dj</span><span class="o">.</span><span class="n">Manual</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Information about subject and its cage.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Information about subject and its cage.</span>
 
 <span class="sd">    Attributes:</span>
 <span class="sd">        subject.Subject (foreign key): subject.Subject key.</span>
@@ -2089,8 +2094,7 @@ User: The user associated with a particular animal.</p>
 
         <details class="quote">
           <summary>Source code in <code>element_animal/genotyping.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">239</span>
-<span class="normal">240</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">240</span>
 <span class="normal">241</span>
 <span class="normal">242</span>
 <span class="normal">243</span>
@@ -2106,9 +2110,10 @@ User: The user associated with a particular animal.</p>
 <span class="normal">253</span>
 <span class="normal">254</span>
 <span class="normal">255</span>
-<span class="normal">256</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@schema</span>
+<span class="normal">256</span>
+<span class="normal">257</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@schema</span>
 <span class="k">class</span> <span class="nc">GenotypeTest</span><span class="p">(</span><span class="n">dj</span><span class="o">.</span><span class="n">Manual</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Information about genotype test.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Information about genotype test.</span>
 
 <span class="sd">    Attributes:</span>
 <span class="sd">        subject.Subject (foreign key): subject.Subject key.</span>
@@ -2166,42 +2171,6 @@ User: The user associated with a particular animal.</p>
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-        
-        <a href="../export/nwb/" class="md-footer__link md-footer__link--prev" aria-label="Previous: nwb.py" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              nwb.py
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../subject/" class="md-footer__link md-footer__link--next" aria-label="Next: subject.py" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              subject.py
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -2287,14 +2256,13 @@ User: The user associated with a particular animal.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.integrate", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.integrate", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.51d95adb.min.js"></script>
       
         <script src="https://js-na1.hs-scripts.com/23133402.js"></script>
       
-    
     
   </body>
 </html>
