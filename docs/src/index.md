@@ -8,16 +8,16 @@ to assemble a fully functional pipeline.
 
 + `element-animal` features a DataJoint pipeline design for subject and genotyping management.
 
-+ `element-animal` is not a complete workflow by itself, but rather a modular design of
-tables and dependencies.
++ `element-animal` is not a complete workflow by itself, but rather a modular design
+  of tables and dependencies.
 
 + `element-animal` can be flexibly attached to any DataJoint workflow.
 
-Visit the [Concepts page](./concepts.md) for more information on
-colony management and Element Animal.  To get started with building your data 
-pipeline visit the [Tutorials page](./tutorials.md).
+Visit the [Concepts page](./concepts.md) for more information on colony management and
+Element Animal. To get started with building your data pipeline visit the
+[Tutorials page](./tutorials.md).
 
-![Subect schema diagram](https://raw.githubusercontent.com/datajoint/element-animal/main/images/subject_diagram.svg)
+![Subject schema diagram](https://raw.githubusercontent.com/datajoint/element-animal/main/images/subject_diagram.svg)
 
 ![Genotyping schema diagram](https://raw.githubusercontent.com/datajoint/element-animal/main/images/genotyping_diagram.svg)
 

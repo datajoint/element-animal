@@ -1,7 +1,7 @@
-import datajoint as dj
 import importlib
 import inspect
 
+import datajoint as dj
 
 schema = dj.schema()
 
@@ -100,7 +100,7 @@ class Allele(dj.Lookup):
         -> master
         ---
         -> Source
-        source_identifier=''  : varchar(255) 
+        source_identifier=''  : varchar(255)
         source_url=''         : varchar(255) # link to the line information
         expression_data_url='': varchar(255) # link to the expression pattern from Allen institute brain atlas
         """

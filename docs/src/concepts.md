@@ -18,7 +18,7 @@ Additionally, we interviewed these teams to understand their experiment workflow
 associated tools, and interfaces. These teams include:
 
 - [International Brain Laboratory](https://github.com/int-brain-lab/IBL-pipeline)
-- BrainCoGs (Princeton Neuroscience Institute) 
+- BrainCoGs (Princeton Neuroscience Institute)
   ([Python](https://github.com/BrainCOGS/U19-pipeline_python) / [MATLAB](https://github.com/BrainCOGS/U19-pipeline-matlab))
 - [MoC3 (Columbia Zuckerman Institute) + Costa Lab (private repository) + Hillman Lab](https://github.com/ZuckermanBrain/datajoint-hillman)
 - [Sabatini Lab](https://github.com/bernardosabatinilab/sabatini-datajoint-pipeline)

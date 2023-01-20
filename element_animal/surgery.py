@@ -1,6 +1,8 @@
-import datajoint as dj
 import importlib
 import inspect
+
+import datajoint as dj
+
 from . import subject
 
 schema = dj.Schema()
@@ -121,7 +123,7 @@ class ImplantationType(dj.Lookup):
     contents = (
         ("ephys", "electophysiology"),
         ("fiber", "fiber photometry"),
-        ("opto", "optogenetic pertubation"),
+        ("opto", "optogenetic perturbation"),
     )
 
 
