@@ -3,6 +3,10 @@
 Observes [Semantic Versioning](https://semver.org/spec/v2.0.0.html) standard and
 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) convention.
 
+## [0.1.6] - 2023-04-28
+
+- Fix - `.ipynb` output in tutorials is not visible in dark mode.
+
 ## [0.1.5] - 2023-03-02
 
 - Add - `surgery` schema
@@ -42,6 +46,7 @@ Observes [Semantic Versioning](https://semver.org/spec/v2.0.0.html) standard and
 - Add - `subject` schema
 - Add - `genotyping` schema
 
+[0.1.6]: https://github.com/datajoint/element-animal/releases/tag/0.1.6
 [0.1.5]: https://github.com/datajoint/element-animal/releases/tag/0.1.5
 [0.1.4]: https://github.com/datajoint/element-animal/releases/tag/0.1.4
 [0.1.3]: https://github.com/datajoint/element-animal/releases/tag/0.1.3
