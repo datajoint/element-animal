@@ -1,3 +1,5 @@
+[![PyPI version](https://badge.fury.io/py/element-animal.svg)](http://badge.fury.io/py/element-animal)
+
 # Element Animal
 
 DataJoint Element for storing animal meta data, genotype, and surgery information.
