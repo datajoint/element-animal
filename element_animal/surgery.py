@@ -131,8 +131,6 @@ class ImplantationType(dj.Lookup):
 class Implantation(dj.Manual):
     """Implantation of a device
 
-    WRT: With Respect To
-
     Attributes:
         Session (foreign key): Session primary key
         location_id (int): ID of of brain location
@@ -143,9 +141,9 @@ class Implantation(dj.Manual):
         dv ( float ): In mm, dorso-ventral axis. Ventral negative
         dv_reference (projected attribute): Coordinate reference
         theta ( float, nullable ): Elevation in degrees.
-            Rotation about ml-axis [0, 180] WRT Z
+            Rotation about ml-axis [0, 180] relative to z-axis
         phi ( float, nullable ): Azimuth in degrees.
-            Rotations about dv-axis [0, 360] WRT X
+            Rotations about dv-axis [0, 360] relative to x-axis
         beta ( float, nullable ): Rotation about shank in degrees.
             Rotation about the shank [-180, 180]. Clockwise is increasing.
             0 is the probe-front facing anterior
