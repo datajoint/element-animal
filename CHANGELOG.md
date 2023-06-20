@@ -3,7 +3,12 @@
 Observes [Semantic Versioning](https://semver.org/spec/v2.0.0.html) standard and
 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) convention.
 
-## [0.1.7] - 2023 05-11
+## [0.1.8] - 2023-06-20
+
++ Update - GitHub Actions workflows
++ Fix - Remove Google Analytics key
+
+## [0.1.7] - 2023-05-11
 
 + Fix - `.ipynb` dark mode output for all notebooks.
 + Update - CHANGELOG markdown from "-" to "+" for consistency with other
@@ -53,6 +58,7 @@ Observes [Semantic Versioning](https://semver.org/spec/v2.0.0.html) standard and
 + Add - `subject` schema
 + Add - `genotyping` schema
 
+[0.1.8]: https://github.com/datajoint/element-animal/releases/tag/0.1.8
 [0.1.7]: https://github.com/datajoint/element-animal/releases/tag/0.1.7
 [0.1.6]: https://github.com/datajoint/element-animal/releases/tag/0.1.6
 [0.1.5]: https://github.com/datajoint/element-animal/releases/tag/0.1.5
