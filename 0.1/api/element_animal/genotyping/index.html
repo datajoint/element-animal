@@ -17,7 +17,7 @@
         <link rel="next" href="../subject/">
       
       <link rel="icon" href="../../../assets/images/company-logo-blue.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.11">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.16">
     
     
       
@@ -25,10 +25,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -51,16 +51,6 @@
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-  
-
-
-  
-  
-
-
-  
-    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
-  
 
     
     
@@ -720,8 +710,12 @@
           <td>
                 <code>str</code>
           </td>
-          <td><p>schema name on the database server to
-                        activate the <code>genotyping</code> element.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>schema name on the database server to
+                        activate the <code>genotyping</code> element.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -731,8 +725,12 @@
           <td>
                 <code>str</code>
           </td>
-          <td><p>schema name on the database server to
-                    activate the <code>subject</code> element</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>schema name on the database server to
+                    activate the <code>subject</code> element</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -742,8 +740,12 @@
           <td>
                 <code>bool</code>
           </td>
-          <td><p>when True (default), create schema in the
-                database if it does not yet exist.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>when True (default), create schema in the
+                database if it does not yet exist.</p>
+            </div>
+          </td>
           <td>
                 <code>True</code>
           </td>
@@ -753,8 +755,12 @@
           <td>
                 <code>bool</code>
           </td>
-          <td><p>when True (default), create tables in the
-                database if they do not yet exist.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>when True (default), create tables in the
+                database if they do not yet exist.</p>
+            </div>
+          </td>
           <td>
                 <code>True</code>
           </td>
@@ -764,7 +770,11 @@
           <td>
                 <code>bool</code>
           </td>
-          <td><p>a module name or a module containing the</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>a module name or a module containing the</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -774,7 +784,11 @@
           <td>
                 <code>dependencies to activate the `subject` element</code>
           </td>
-          <td></td>
+          <td>
+            <div class="doc-md-description">
+              
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -936,21 +950,33 @@ User: The user associated with a particular animal.</p>
           <td>
                 <code> varchar(32) </code>
           </td>
-          <td><p>Abbreviated sequence name</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Abbreviated sequence name</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>base_pairs</code></td>
           <td>
                 <code> varchar(1024) </code>
           </td>
-          <td><p>Base pairs</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Base pairs</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>sequence_desc</code></td>
           <td>
                 <code> varchar(255) </code>
           </td>
-          <td><p>Description</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Description</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -1044,14 +1070,22 @@ User: The user associated with a particular animal.</p>
           <td>
                 <code>foreign key</code>
           </td>
-          <td><p>subject.Allele key.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>subject.Allele key.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>Sequence</code></td>
           <td>
                 <code> varchar(1024) </code>
           </td>
-          <td><p>Sequence key.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Sequence key.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -1139,28 +1173,44 @@ User: The user associated with a particular animal.</p>
           <td>
                 <code> varchar(24) </code>
           </td>
-          <td><p>Pair identifier.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Pair identifier.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>bp_start_date</code></td>
           <td>
                 <code>date</code>
           </td>
-          <td><p>Optional. Start date of breeding.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Optional. Start date of breeding.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>bp_end_date</code></td>
           <td>
                 <code>date</code>
           </td>
-          <td><p>Option. End date of breeding.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Option. End date of breeding.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>bp_description</code></td>
           <td>
                 <code> varchar(2048) </code>
           </td>
-          <td><p>Description of the pair.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Description of the pair.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -1307,14 +1357,22 @@ User: The user associated with a particular animal.</p>
           <td>
                 <code>foreign key</code>
           </td>
-          <td><p>BreedingPair key.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>BreedingPair key.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>subject.Subject</code></td>
           <td>
                 <code>foreign key</code>
           </td>
-          <td><p>subject.Subject key.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>subject.Subject key.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -1402,14 +1460,22 @@ User: The user associated with a particular animal.</p>
           <td>
                 <code>foreign key</code>
           </td>
-          <td><p>BreedingPair key.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>BreedingPair key.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>subject.Subject</code></td>
           <td>
                 <code>foreign key</code>
           </td>
-          <td><p>subject.Subject key.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>subject.Subject key.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -1506,28 +1572,44 @@ User: The user associated with a particular animal.</p>
           <td>
                 <code>foreign key</code>
           </td>
-          <td><p>BreedingPair key.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>BreedingPair key.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>litter_birth_date</code></td>
           <td>
                 <code>date</code>
           </td>
-          <td><p>Birth date of litter.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Birth date of litter.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>num_of_pups</code></td>
           <td>
                 <code>tinyint</code>
           </td>
-          <td><p>Number of animals in the litter.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Number of animals in the litter.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>litter_notes</code></td>
           <td>
                 <code> varchar(255) </code>
           </td>
-          <td><p>Notes about the litter.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Notes about the litter.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -1625,35 +1707,55 @@ User: The user associated with a particular animal.</p>
           <td>
                 <code>foreign key</code>
           </td>
-          <td><p>Litter key.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Litter key.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>weaning_date</code></td>
           <td>
                 <code>date</code>
           </td>
-          <td><p>Litter key.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Litter key.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>num_of_male</code></td>
           <td>
                 <code>tinyint</code>
           </td>
-          <td><p>Number of males.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Number of males.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>num_of_female</code></td>
           <td>
                 <code>tinyint</code>
           </td>
-          <td><p>Number of females.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Number of females.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>weaning_notes</code></td>
           <td>
                 <code> varchar(255) </code>
           </td>
-          <td><p>Notes about weaning.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Notes about weaning.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -1755,14 +1857,22 @@ User: The user associated with a particular animal.</p>
           <td>
                 <code>foreign key</code>
           </td>
-          <td><p>subject.Subject key.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>subject.Subject key.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>Litter</code></td>
           <td>
                 <code>foreign key</code>
           </td>
-          <td><p>Litter key.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Litter key.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -1852,14 +1962,22 @@ User: The user associated with a particular animal.</p>
           <td>
                 <code> varchar(32) </code>
           </td>
-          <td><p>Cage identifier.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Cage identifier.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>cage_purpose</code></td>
           <td>
                 <code> varchar(128) </code>
           </td>
-          <td><p>Cage purpose.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Cage purpose.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -1949,28 +2067,44 @@ User: The user associated with a particular animal.</p>
           <td>
                 <code>foreign key</code>
           </td>
-          <td><p>subject.Subject key.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>subject.Subject key.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>caging_datetime</code></td>
           <td>
                 <code>datetime</code>
           </td>
-          <td><p>Date of cage entry.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Date of cage entry.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>Cage</code></td>
           <td>
                 <code>foreign key</code>
           </td>
-          <td><p>Cage key.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Cage key.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>User</code></td>
           <td>
                 <code>foreign key</code>
           </td>
-          <td><p>User key.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>User key.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2070,28 +2204,44 @@ User: The user associated with a particular animal.</p>
           <td>
                 <code>foreign key</code>
           </td>
-          <td><p>subject.Subject key.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>subject.Subject key.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>Sequence</code></td>
           <td>
                 <code>foreign key</code>
           </td>
-          <td><p>Sequence key.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Sequence key.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>genotype_test_id</code></td>
           <td>
                 <code>datetime</code>
           </td>
-          <td><p>Identifier of a genotype test.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Identifier of a genotype test.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>test_result</code></td>
           <td>
                 <code>Present or Absent</code>
           </td>
-          <td><p>Test result.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Test result.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
@@ -2160,8 +2310,6 @@ User: The user associated with a particular animal.</p>
 
 </div>
 
-
-  
 
 
 
@@ -2282,9 +2430,11 @@ User: The user associated with a particular animal.</p>
     <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.integrate", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.fac441b0.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.a51614de.min.js"></script>
       
-        <script src="https://js-na1.hs-scripts.com/23133402.js"></script>
+        
+          <script src="https://js-na1.hs-scripts.com/23133402.js"></script>
+        
       
     
   </body>
