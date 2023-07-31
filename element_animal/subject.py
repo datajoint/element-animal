@@ -146,15 +146,15 @@ class Subject(dj.Manual):
     """Animal subject information.
 
     Attributes:
-        subject ( varchar(8) ): Subject ID.
-        subject_nickname ( varchar(8) ): Subject nickname.
+        subject ( varchar(16) ): Subject ID.
+        subject_nickname ( varchar(64) ): Subject nickname.
         sex (enum): 'M', 'F', or 'U'; Male, Female, or Unknown.
         subject_birth_date (date): Birth date of the subject.
         subject_description ( varchar(1024) ): Description of the subject.
     """
 
     definition = """
-    subject                 : varchar(8)
+    subject                 : varchar(16)
     ---
     subject_nickname=''     : varchar(64)
     sex                     : enum('M', 'F', 'U')
