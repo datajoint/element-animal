@@ -3,6 +3,10 @@
 Observes [Semantic Versioning](https://semver.org/spec/v2.0.0.html) standard and
 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) convention.
 
+## [0.2.0] - 2023-08-23
+
++ Add - `injection` schema
+
 ## [0.1.8] - 2023-06-20
 
 + Update - GitHub Actions workflows
@@ -58,6 +62,7 @@ Observes [Semantic Versioning](https://semver.org/spec/v2.0.0.html) standard and
 + Add - `subject` schema
 + Add - `genotyping` schema
 
+[0.2.0]: https://github.com/datajoint/element-animal/releases/tag/0.2.0
 [0.1.8]: https://github.com/datajoint/element-animal/releases/tag/0.1.8
 [0.1.7]: https://github.com/datajoint/element-animal/releases/tag/0.1.7
 [0.1.6]: https://github.com/datajoint/element-animal/releases/tag/0.1.6

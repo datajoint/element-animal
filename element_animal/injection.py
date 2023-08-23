@@ -3,6 +3,7 @@ import inspect
 
 import datajoint as dj
 
+from element_lab import lab
 from . import surgery
 
 schema = dj.Schema()
@@ -13,6 +14,7 @@ _linking_module = None
 def activate(
     injection_schema_name: str,
     surgery_schema_name: str = None,
+    lab_schema_name: str = None,
     *,
     create_schema: bool = True,
     create_tables: bool = True,
@@ -44,6 +46,11 @@ def activate(
     global _linking_module
     _linking_module = linking_module
 
+    lab.activate(
+        lab_schema_name,
+        create_schema=create_schema,
+        create_tables=create_tables,
+    )
     surgery.activate(
         surgery_schema_name,
         create_schema=create_schema,
@@ -60,6 +67,12 @@ def activate(
 
 @schema
 class VirusSerotype(dj.Lookup):
+    """Virus serotype.
+
+    Attributes:
+        virus_serotype (str): Virus serotype.
+    """
+
     definition = """
     virus_serotype: varchar(10)
     """
@@ -84,24 +97,22 @@ class VirusSerotype(dj.Lookup):
 
 
 @schema
-class MicroInjectionDevice(dj.Lookup):
-    definition = """
-    micro_injection_device: varchar(12)
-    """
-    contents = zip(
-        [
-            "Nanoject",
-            "Picospritzer",
-        ]
-    )
-
-
-@schema
 class InjectionProtocol(dj.Manual):
+    """Injection device protocol.
+    
+    Attributes:
+        protocol_id (int): Unique protocol ID.
+        lab.Device (foreign key): Primary key from lab.Device.
+        volume_per_pulse (float): Volume dispensed per microinjector pulse.
+        injection_rate (float): Rate at which injectate is dispensed.
+        interpulse_delay (float): Delay between injection pulses. Set to 0 if
+        injection is a single pulse.
+    """
+
     definition = """
     protocol_id         : int
     ---
-    -> MicroInjectionDevice
+    -> lab.Device
     volume_per_pulse    : float
     injection_rate      : float
     interpulse_delay    : float
@@ -110,15 +121,34 @@ class InjectionProtocol(dj.Manual):
 
 @schema
 class VirusName(dj.Manual):
+    """Full virus name.
+
+    Attributes:
+        virus_name (str): Full virus name. Ex: AAV1.CAG.Flex.ArchT.GFP.
+        VirusSerotype (foreign key, nullable): Primary key from VirusSerotype.
+    """
+
     definition = """
     virus_name: varchar(64)  # Full virus name. Ex: AAV1.CAG.Flex.ArchT.GFP. 
     ---
-    -> VirusSerotype
+    -> [nullable] VirusSerotype
     """
 
 
 @schema
 class Injection(dj.Manual):
+    """Information about the virus injection.
+
+    Attributes:
+        surgery.Implantation (foreign key): Primary key from
+        surgery.Implantation.
+        VirusName (foreign key): Primary key from VirusName.
+        InjectionProtocol (foreign key): Primary key from InjectionProtocol.
+        titer (str): Titer of injectate at the current injection site.
+        total_volume (float): Total volume injected at the current injection site.
+        injection_comment (str): Comments about the virus injection. 
+    """
+
     definition = """
     -> surgery.Implantation
     -> VirusName
