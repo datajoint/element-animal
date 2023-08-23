@@ -129,7 +129,7 @@ class VirusName(dj.Manual):
     """
 
     definition = """
-    virus_name: varchar(64)  # Full virus name. Ex: AAV1.CAG.Flex.ArchT.GFP. 
+    virus_name: varchar(64)  # Full virus name. Ex: AAV1.CAG.Flex.ArchT.GFP.
     ---
     -> [nullable] VirusSerotype
     """
@@ -145,8 +145,7 @@ class Injection(dj.Manual):
         VirusName (foreign key): Primary key from VirusName.
         InjectionProtocol (foreign key): Primary key from InjectionProtocol.
         titer (str): Titer of injectate at the current injection site.
-        total_volume (float): Total volume injected at the current injection 
-        site.
+        total_volume (float): Total volume injected at the current injection site. 
         injection_comment (str): Comments about the virus injection. 
     """
 
