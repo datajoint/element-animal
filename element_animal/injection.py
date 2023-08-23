@@ -59,9 +59,9 @@ def activate(
 
 
 @schema
-class AAVSerotype(dj.Lookup):
+class VirusSerotype(dj.Lookup):
     definition = """
-    aav_serotype: varchar(10)
+    virus_serotype: varchar(10)
     """
     contents = zip(
         [
@@ -99,9 +99,9 @@ class MicroInjectionDevice(dj.Lookup):
 @schema
 class InjectionProtocol(dj.Manual):
     definition = """
-    -> MicroInjectionDevice
     protocol_id         : int
     ---
+    -> MicroInjectionDevice
     volume_per_pulse    : float
     injection_rate      : float
     interpulse_delay    : float
@@ -112,6 +112,8 @@ class InjectionProtocol(dj.Manual):
 class VirusName(dj.Manual):
     definition = """
     virus_name: varchar(64)  # Full virus name. Ex: AAV1.CAG.Flex.ArchT.GFP. 
+    ---
+    -> VirusSerotype
     """
 
 
@@ -120,10 +122,9 @@ class Injection(dj.Manual):
     definition = """
     -> surgery.Implantation
     -> VirusName
-    -> surgery.BrainRegion
+    -> InjectionProtocol
     ---
-    -> [nullable] AAVSerotype
-    -> [nullable] InjectionProtocol
     titer           : varchar(16)
     total_volume    : float
+    injection_comment=''  : varchar(1024)
     """
