@@ -7,7 +7,6 @@ from element_lab import lab
 from . import surgery
 
 schema = dj.Schema()
-
 _linking_module = None
 
 
@@ -99,7 +98,7 @@ class VirusSerotype(dj.Lookup):
 @schema
 class InjectionProtocol(dj.Manual):
     """Injection device protocol.
-    
+
     Attributes:
         protocol_id (int): Unique protocol ID.
         lab.Device (foreign key): Primary key from lab.Device.
@@ -145,8 +144,8 @@ class Injection(dj.Manual):
         VirusName (foreign key): Primary key from VirusName.
         InjectionProtocol (foreign key): Primary key from InjectionProtocol.
         titer (str): Titer of injectate at the current injection site.
-        total_volume (float): Total volume injected at the current injection site. 
-        injection_comment (str): Comments about the virus injection. 
+        total_volume (float): Total volume injected at the current injection site.
+        injection_comment (str): Comments about the virus injection.
     """
 
     definition = """
