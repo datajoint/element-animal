@@ -133,14 +133,14 @@ class Implantation(dj.Manual):
 
     Attributes:
         Subject (foreign key): Subject primary key.
-        implant_date (datetime): ID of brain location.
+        implant_date (datetime): Date and time of implantation surgery.
         ImplantationType (foreign key): ImplantationType primary key.
         region_acronym ( projected attribute, varchar(32) ): Brain region
         shorthand from BrainRegion.
         hemisphere ( projected attribute, varchar(8) ): Brain region hemisphere
         from Hemisphere.
         user ( projected attribute, varchar(32) ): User who performed the surgery.
-        implant_comment ( varchar(1024) ): Comments about the implant.
+        implant_comment ( varchar(1024), optional ): Comments about the implant.
     """
 
     definition = """
