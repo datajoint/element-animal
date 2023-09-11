@@ -3,7 +3,6 @@ import inspect
 
 import datajoint as dj
 
-from element_lab import lab
 from . import surgery
 
 schema = dj.Schema()
@@ -17,7 +16,7 @@ def activate(
     *,
     create_schema: bool = True,
     create_tables: bool = True,
-    linking_module: bool = True,
+    linking_module: str = None,
 ):
     """Activate this schema.
 
@@ -28,12 +27,12 @@ def activate(
                             database if it does not yet exist.
         create_tables (bool): when True (default), create tables in the
                             database if they do not yet exist.
-        linking_module (bool): a module name or a module containing the
-        required dependencies to activate the `subject` element:
+        linking_module (str): A module name or a module containing the required
+            dependencies to activate the `injection` module.
 
     Dependencies:
     Upstream tables:
-        User: the who conducted a particular surgery/implantation
+        Device: table from `element-lab`.
     """
 
     if isinstance(linking_module, str):
@@ -54,13 +53,13 @@ def activate(
         surgery_schema_name,
         create_schema=create_schema,
         create_tables=create_tables,
-        linking_module=linking_module,
+        linking_module=_linking_module,
     )
     schema.activate(
         injection_schema_name,
         create_schema=create_schema,
         create_tables=create_tables,
-        add_objects=linking_module.__dict__,
+        add_objects=_linking_module.__dict__,
     )
 
 
@@ -111,7 +110,7 @@ class InjectionProtocol(dj.Manual):
     definition = """
     protocol_id         : int
     ---
-    -> lab.Device
+    -> Device
     volume_per_pulse    : float
     injection_rate      : float
     interpulse_delay    : float

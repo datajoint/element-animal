@@ -6,6 +6,7 @@ Observes [Semantic Versioning](https://semver.org/spec/v2.0.0.html) standard and
 ## [0.2.0] - 2023-08-23
 
 + Add - `injection` schema
++ Update - docstrings, `linking_module` within each `activate` function
 
 ## [0.1.8] - 2023-06-20
 

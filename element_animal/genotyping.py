@@ -6,14 +6,15 @@ import datajoint as dj
 from . import subject
 
 schema = dj.schema()
+_linking_module = None
 
 
 def activate(
-    genotyping_schema_name,
-    subject_schema_name=None,
-    create_schema=True,
-    create_tables=True,
-    linking_module=None,
+    genotyping_schema_name: str,
+    subject_schema_name: str = None,
+    create_schema: bool = True,
+    create_tables: bool = True,
+    linking_module: str = None,
 ):
     """Activate this schema.
 
@@ -26,8 +27,8 @@ def activate(
                             database if it does not yet exist.
         create_tables (bool, optional): when True (default), create tables in the
                             database if they do not yet exist.
-        linking_module (bool, optional): a module name or a module containing the
-        required dependencies to activate the `subject` element:
+        linking_module (str): A module name or a module containing the required
+            dependencies to activate the `genotyping` module.
 
     Dependencies:
     Upstream tables:
@@ -56,7 +57,7 @@ def activate(
         genotyping_schema_name,
         create_schema=create_schema,
         create_tables=create_tables,
-        add_objects=linking_module.__dict__,
+        add_objects=_linking_module.__dict__,
     )
 
 
