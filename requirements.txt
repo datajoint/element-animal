@@ -1,3 +1,2 @@
 datajoint>=0.13
-element-lab>=0.3.0
 pynwb>=1.4.0
