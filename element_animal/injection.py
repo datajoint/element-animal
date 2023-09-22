@@ -44,11 +44,6 @@ def activate(
     global _linking_module
     _linking_module = linking_module
 
-    lab.activate(
-        lab_schema_name,
-        create_schema=create_schema,
-        create_tables=create_tables,
-    )
     surgery.activate(
         surgery_schema_name,
         create_schema=create_schema,
