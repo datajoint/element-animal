@@ -169,7 +169,7 @@ class Subject(dj.Manual):
             Subject (foreign key): Primary key from Subject.
             species (str): Subject species as Latin binomial or NCBI taxonomic identifier.
         """
-        
+
         definition = """
         -> master
         ---
