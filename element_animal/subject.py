@@ -162,6 +162,20 @@ class Subject(dj.Manual):
     subject_description=''  : varchar(1024)
     """
 
+    class Species(dj.Part):
+        """Subject species as Latin binomial or NCBI taxonomic identifier.
+
+        Attributes:
+            Subject (foreign key): Primary key from Subject.
+            species (str): Subject species as Latin binomial or NCBI taxonomic identifier.
+        """
+        
+        definition = """
+        -> master
+        ---
+        species     : varchar(32)
+        """
+
     class Protocol(dj.Part):
         """Protocol under which this subject animal is used.
 
