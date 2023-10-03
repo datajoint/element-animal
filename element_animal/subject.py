@@ -11,7 +11,7 @@ def activate(
     *,
     create_schema: bool = True,
     create_tables: bool = True,
-    linking_module = None,
+    linking_module=None,
 ):
     """Activate this schema.
 
