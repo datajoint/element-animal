@@ -56,6 +56,10 @@ There are three modules in `element-animal`:
 
 ![Surgery schema diagram](https://raw.githubusercontent.com/datajoint/element-animal/main/images/surgery_diagram.svg)
 
+### Injection Diagram
+
+![Injection schema diagram](https://raw.githubusercontent.com/datajoint/element-animal/main/images/injection_diagram.svg)
+
 ## `subject` schema ([API docs](https://datajoint.com/docs/elements/element-animal/api/element_animal/subject))
 
 - Although not required, most choose to connect the `Session` table to a `Subject` table.
@@ -93,3 +97,12 @@ There are three modules in `element-animal`:
 | Hemisphere          | Brain region hemisphere                                        |
 | ImplantationType    | Type of implantation                                           |
 | Implantation        | Implantation of a device                                       |
+
+### `injection` schema ([API docs](https://datajoint.com/docs/elements/element-animal/api/element_animal/injection))
+
+| Table               | Description                                                    |
+| ------------------- | -------------------------------------------------------------- |
+| VirusSerotype       | Virus serotype                                                 |
+| InjectionProtocol   | Injection device protocol                                      |
+| VirusName           | Full virus name                                                |
+| Injection           | Information about the virus injection                          |

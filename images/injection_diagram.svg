@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="647pt" height="256pt" viewBox="0.00 0.00 647.00 256.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 252)">
+<title>%3</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-252 643,-252 643,4 -4,4"/>
+<!-- 19 -->
+<g id="node1" class="node"><title>19</title>
+<ellipse fill="#ff8800" fill-opacity="0.501961" stroke="#ff8800" stroke-opacity="0.501961" cx="313" cy="-159.5" rx="2" ry="2"/>
+<text text-anchor="middle" x="313" y="-159.2" font-family="arial" font-size="1.00" fill="#ff8800">19</text>
+</g>
+<!-- surgery.Implantation -->
+<g id="node8" class="node"><title>surgery.Implantation</title>
+<g id="a_node8"><a xlink:title="→ subject.Subjectimplant_date         → surgery.ImplantationType→ surgery.BrainRegion.proj(target_region=&quot;region_acronym&quot;)→ surgery.Hemisphere.proj(target_hemisphere=&quot;hemisphere&quot;)------------------------------→ `kushalbakshi_`.`#user`.proj(surgeon=&quot;user&quot;)implant_comment=&quot;&quot;   ">
+<polygon fill="#00ff00" fill-opacity="0.188235" stroke="#00ff00" stroke-opacity="0.188235" points="290,-106 170,-106 170,-71 290,-71 290,-106"/>
+<text text-anchor="start" x="178" y="-86.4" font-family="arial" text-decoration="underline" font-size="12.00" fill="darkgreen">surgery.Implantation</text>
+</a>
+</g>
+</g>
+<!-- 19&#45;&gt;surgery.Implantation -->
+<g id="edge1" class="edge"><title>19-&gt;surgery.Implantation</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-opacity="0.250980" d="M311.979,-157.595C309.147,-155.091 300.944,-147.861 294,-142 279.614,-129.857 263.192,-116.394 250.585,-106.142"/>
+</g>
+<!-- 23 -->
+<g id="node2" class="node"><title>23</title>
+<ellipse fill="#ff8800" fill-opacity="0.501961" stroke="#ff8800" stroke-opacity="0.501961" cx="71" cy="-88.5" rx="2" ry="2"/>
+<text text-anchor="middle" x="71" y="-88.2" font-family="arial" font-size="1.00" fill="#ff8800">23</text>
+</g>
+<!-- surgery.Implantation.Coordinate -->
+<g id="node9" class="node"><title>surgery.Implantation.Coordinate</title>
+<g id="a_node9"><a xlink:title="→ surgery.Implantation------------------------------ap=null              → [nullable] surgery.CoordinateReference.proj(ap_ref=&quot;reference&quot;)ml=null              → [nullable] surgery.CoordinateReference.proj(ml_ref=&quot;reference&quot;)dv=null              → [nullable] surgery.CoordinateReference.proj(dv_ref=&quot;reference&quot;)theta=null           phi=null             beta=null            ">
+<polygon fill="none" stroke="none" points="263,-27 109,-27 109,-8 263,-8 263,-27"/>
+<text text-anchor="middle" x="186" y="-15" font-family="arial" font-size="10.00">surgery.Implantation.Coordinate</text>
+</a>
+</g>
+</g>
+<!-- 23&#45;&gt;surgery.Implantation.Coordinate -->
+<g id="edge2" class="edge"><title>23-&gt;surgery.Implantation.Coordinate</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-dasharray="5,2" stroke-opacity="0.250980" d="M71.9037,-86.5169C74.4241,-83.8112 81.8184,-76.1163 89,-71 114.421,-52.8895 146.795,-36.5575 166.961,-27.0814"/>
+</g>
+<!-- 18 -->
+<g id="node3" class="node"><title>18</title>
+<ellipse fill="#ff8800" fill-opacity="0.501961" stroke="#ff8800" stroke-opacity="0.501961" cx="349" cy="-159.5" rx="2" ry="2"/>
+<text text-anchor="middle" x="349" y="-159.2" font-family="arial" font-size="1.00" fill="#ff8800">18</text>
+</g>
+<!-- 18&#45;&gt;surgery.Implantation -->
+<g id="edge3" class="edge"><title>18-&gt;surgery.Implantation</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-opacity="0.250980" d="M348.101,-157.511C345.592,-154.789 338.224,-147.056 331,-142 311.086,-128.062 286.992,-115.398 267.332,-106.001"/>
+</g>
+<!-- 21 -->
+<g id="node4" class="node"><title>21</title>
+<ellipse fill="#ff8800" fill-opacity="0.501961" stroke="#ff8800" stroke-opacity="0.501961" cx="107" cy="-88.5" rx="2" ry="2"/>
+<text text-anchor="middle" x="107" y="-88.2" font-family="arial" font-size="1.00" fill="#ff8800">21</text>
+</g>
+<!-- 21&#45;&gt;surgery.Implantation.Coordinate -->
+<g id="edge4" class="edge"><title>21-&gt;surgery.Implantation.Coordinate</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-dasharray="5,2" stroke-opacity="0.250980" d="M107.966,-86.5949C110.645,-84.0885 118.408,-76.8559 125,-71 142.55,-55.411 163.336,-37.6727 175.553,-27.3197"/>
+</g>
+<!-- 22 -->
+<g id="node5" class="node"><title>22</title>
+<ellipse fill="#ff8800" fill-opacity="0.501961" stroke="#ff8800" stroke-opacity="0.501961" cx="143" cy="-88.5" rx="2" ry="2"/>
+<text text-anchor="middle" x="143" y="-88.2" font-family="arial" font-size="1.00" fill="#ff8800">22</text>
+</g>
+<!-- 22&#45;&gt;surgery.Implantation.Coordinate -->
+<g id="edge5" class="edge"><title>22-&gt;surgery.Implantation.Coordinate</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-dasharray="5,2" stroke-opacity="0.250980" d="M143.608,-86.5246C147.589,-80.1364 170.102,-44.0113 180.604,-27.1581"/>
+</g>
+<!-- lab.Device -->
+<g id="node6" class="node"><title>lab.Device</title>
+<g id="a_node6"><a xlink:title="device               ------------------------------modality             description=null     ">
+<polygon fill="#000000" fill-opacity="0.125490" stroke="none" points="595.5,-177 534.5,-177 534.5,-142 595.5,-142 595.5,-177"/>
+<text text-anchor="start" x="542.5" y="-158" font-family="arial" text-decoration="underline" font-size="10.00">lab.Device</text>
+</a>
+</g>
+</g>
+<!-- injection.InjectionProtocol -->
+<g id="node13" class="node"><title>injection.InjectionProtocol</title>
+<g id="a_node13"><a xlink:title="protocol_id          ------------------------------→ lab.Devicevolume_per_pulse     injection_rate       interpulse_delay     ">
+<polygon fill="#00ff00" fill-opacity="0.188235" stroke="#00ff00" stroke-opacity="0.188235" points="639,-106 491,-106 491,-71 639,-71 639,-106"/>
+<text text-anchor="start" x="499" y="-86.4" font-family="arial" text-decoration="underline" font-size="12.00" fill="darkgreen">injection.InjectionProtocol</text>
+</a>
+</g>
+</g>
+<!-- lab.Device&#45;&gt;injection.InjectionProtocol -->
+<g id="edge6" class="edge"><title>lab.Device-&gt;injection.InjectionProtocol</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-dasharray="5,2" stroke-opacity="0.250980" d="M565,-141.797C565,-130.949 565,-116.867 565,-106.049"/>
+</g>
+<!-- injection.VirusName -->
+<g id="node7" class="node"><title>injection.VirusName</title>
+<g id="a_node7"><a xlink:title="virus_name           ------------------------------→ [nullable] injection.VirusSerotype">
+<polygon fill="#00ff00" fill-opacity="0.188235" stroke="#00ff00" stroke-opacity="0.188235" points="472.5,-106 351.5,-106 351.5,-71 472.5,-71 472.5,-106"/>
+<text text-anchor="start" x="359.5" y="-86.4" font-family="arial" text-decoration="underline" font-size="12.00" fill="darkgreen">injection.VirusName</text>
+</a>
+</g>
+</g>
+<!-- injection.Injection -->
+<g id="node14" class="node"><title>injection.Injection</title>
+<g id="a_node14"><a xlink:title="→ surgery.Implantation→ injection.VirusName→ injection.InjectionProtocol------------------------------titer                total_volume         injection_comment=&quot;&quot; ">
+<polygon fill="#00ff00" fill-opacity="0.188235" stroke="#00ff00" stroke-opacity="0.188235" points="464,-35 360,-35 360,-0 464,-0 464,-35"/>
+<text text-anchor="middle" x="412" y="-14.4" font-family="arial" font-size="12.00" fill="darkgreen">injection.Injection</text>
+</a>
+</g>
+</g>
+<!-- injection.VirusName&#45;&gt;injection.Injection -->
+<g id="edge7" class="edge"><title>injection.VirusName-&gt;injection.Injection</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-opacity="0.250980" d="M412,-70.797C412,-59.9485 412,-45.8669 412,-35.0492"/>
+</g>
+<!-- surgery.Implantation&#45;&gt;surgery.Implantation.Coordinate -->
+<g id="edge8" class="edge"><title>surgery.Implantation-&gt;surgery.Implantation.Coordinate</title>
+<path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.250980" d="M219.349,-70.797C210.6,-57.0768 198.553,-38.1854 191.589,-27.2652"/>
+</g>
+<!-- surgery.Implantation&#45;&gt;injection.Injection -->
+<g id="edge9" class="edge"><title>surgery.Implantation-&gt;injection.Injection</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-opacity="0.250980" d="M273.594,-70.9728C302.303,-60.0885 339.746,-45.893 368.447,-35.0118"/>
+</g>
+<!-- surgery.Hemisphere -->
+<g id="node10" class="node"><title>surgery.Hemisphere</title>
+<g id="a_node10"><a xlink:title="hemisphere           ">
+<polygon fill="#000000" fill-opacity="0.125490" stroke="none" points="317,-248 213,-248 213,-213 317,-213 317,-248"/>
+<text text-anchor="start" x="221" y="-229" font-family="arial" text-decoration="underline" font-size="10.00">surgery.Hemisphere</text>
+</a>
+</g>
+</g>
+<!-- surgery.Hemisphere&#45;&gt;19 -->
+<g id="edge10" class="edge"><title>surgery.Hemisphere-&gt;19</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-opacity="0.250980" d="M276.619,-212.797C289.049,-194.929 307.581,-168.29 312.019,-161.91"/>
+</g>
+<!-- surgery.BrainRegion -->
+<g id="node11" class="node"><title>surgery.BrainRegion</title>
+<g id="a_node11"><a xlink:title="region_acronym       ------------------------------region_name          ">
+<polygon fill="#00ff00" fill-opacity="0.188235" stroke="#00ff00" stroke-opacity="0.188235" points="458.5,-248 335.5,-248 335.5,-213 458.5,-213 458.5,-248"/>
+<text text-anchor="start" x="343.5" y="-228.4" font-family="arial" text-decoration="underline" font-size="12.00" fill="darkgreen">surgery.BrainRegion</text>
+</a>
+</g>
+</g>
+<!-- surgery.BrainRegion&#45;&gt;18 -->
+<g id="edge11" class="edge"><title>surgery.BrainRegion-&gt;18</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-opacity="0.250980" d="M385.381,-212.797C372.951,-194.929 354.419,-168.29 349.981,-161.91"/>
+</g>
+<!-- injection.VirusSerotype -->
+<g id="node12" class="node"><title>injection.VirusSerotype</title>
+<g id="a_node12"><a xlink:title="virus_serotype       ">
+<polygon fill="#000000" fill-opacity="0.125490" stroke="none" points="493.5,-177 376.5,-177 376.5,-142 493.5,-142 493.5,-177"/>
+<text text-anchor="start" x="384.5" y="-158" font-family="arial" text-decoration="underline" font-size="10.00">injection.VirusSerotype</text>
+</a>
+</g>
+</g>
+<!-- injection.VirusSerotype&#45;&gt;injection.VirusName -->
+<g id="edge12" class="edge"><title>injection.VirusSerotype-&gt;injection.VirusName</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-dasharray="5,2" stroke-opacity="0.250980" d="M429.432,-141.797C425.816,-130.949 421.122,-116.867 417.516,-106.049"/>
+</g>
+<!-- injection.InjectionProtocol&#45;&gt;injection.Injection -->
+<g id="edge13" class="edge"><title>injection.InjectionProtocol-&gt;injection.Injection</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-opacity="0.250980" d="M528.353,-70.9728C504.218,-60.0885 472.741,-45.893 448.613,-35.0118"/>
+</g>
+<!-- surgery.ImplantationType -->
+<g id="node15" class="node"><title>surgery.ImplantationType</title>
+<g id="a_node15"><a xlink:title="implant_type         ------------------------------implant_description  ">
+<polygon fill="#000000" fill-opacity="0.125490" stroke="none" points="285.5,-177 160.5,-177 160.5,-142 285.5,-142 285.5,-177"/>
+<text text-anchor="start" x="168.5" y="-158" font-family="arial" text-decoration="underline" font-size="10.00">surgery.ImplantationType</text>
+</a>
+</g>
+</g>
+<!-- surgery.ImplantationType&#45;&gt;surgery.Implantation -->
+<g id="edge14" class="edge"><title>surgery.ImplantationType-&gt;surgery.Implantation</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-opacity="0.250980" d="M224.695,-141.797C225.795,-130.949 227.224,-116.867 228.321,-106.049"/>
+</g>
+<!-- surgery.CoordinateReference -->
+<g id="node16" class="node"><title>surgery.CoordinateReference</title>
+<g id="a_node16"><a xlink:title="reference            ">
+<polygon fill="#000000" fill-opacity="0.125490" stroke="none" points="142,-177 0,-177 0,-142 142,-142 142,-177"/>
+<text text-anchor="start" x="8" y="-158" font-family="arial" text-decoration="underline" font-size="10.00">surgery.CoordinateReference</text>
+</a>
+</g>
+</g>
+<!-- surgery.CoordinateReference&#45;&gt;23 -->
+<g id="edge17" class="edge"><title>surgery.CoordinateReference-&gt;23</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-dasharray="5,2" stroke-opacity="0.250980" d="M71,-141.797C71,-123.929 71,-97.2901 71,-90.9096"/>
+</g>
+<!-- surgery.CoordinateReference&#45;&gt;21 -->
+<g id="edge15" class="edge"><title>surgery.CoordinateReference-&gt;21</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-dasharray="5,2" stroke-opacity="0.250980" d="M79.7146,-141.797C89.0371,-123.929 102.936,-97.2901 106.265,-90.9096"/>
+</g>
+<!-- surgery.CoordinateReference&#45;&gt;22 -->
+<g id="edge16" class="edge"><title>surgery.CoordinateReference-&gt;22</title>
+<path fill="none" stroke="#000000" stroke-width="0.75" stroke-dasharray="5,2" stroke-opacity="0.250980" d="M88.4292,-141.797C107.074,-123.929 134.871,-97.2901 141.529,-90.9096"/>
+</g>
+</g>
+</svg>

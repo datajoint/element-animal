@@ -11,7 +11,7 @@ def activate(
     *,
     create_schema: bool = True,
     create_tables: bool = True,
-    linking_module: bool = True,
+    linking_module=None,
 ):
     """Activate this schema.
 
@@ -22,8 +22,8 @@ def activate(
                             database if it does not yet exist.
         create_tables (bool): when True (default), create tables in the
                             database if they do not yet exist.
-        linking_module (bool): a module name or a module containing the
-        required dependencies to activate the `subject` element:
+        linking_module (str): A module name or a module containing the required
+            dependencies to activate the `subject` module.
 
     Dependencies:
     Upstream tables:
@@ -49,7 +49,7 @@ def activate(
         schema_name,
         create_schema=create_schema,
         create_tables=create_tables,
-        add_objects=linking_module.__dict__,
+        add_objects=_linking_module.__dict__,
     )
 
 
@@ -147,7 +147,7 @@ class Subject(dj.Manual):
 
     Attributes:
         subject ( varchar(8) ): Subject ID.
-        subject_nickname ( varchar(8) ): Subject nickname.
+        subject_nickname ( varchar(64) ): Subject nickname.
         sex (enum): 'M', 'F', or 'U'; Male, Female, or Unknown.
         subject_birth_date (date): Birth date of the subject.
         subject_description ( varchar(1024) ): Description of the subject.

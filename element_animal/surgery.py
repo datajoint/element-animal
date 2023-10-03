@@ -16,7 +16,7 @@ def activate(
     *,
     create_schema: bool = True,
     create_tables: bool = True,
-    linking_module: bool = True,
+    linking_module=None,
 ):
     """Activate this schema.
 
@@ -27,8 +27,8 @@ def activate(
                             database if it does not yet exist.
         create_tables (bool): when True (default), create tables in the
                             database if they do not yet exist.
-        linking_module (bool): a module name or a module containing the
-        required dependencies to activate the `subject` element:
+        linking_module (str): A module name or a module containing the required
+            dependencies to activate the `surgery` module.
 
     Dependencies:
     Upstream tables:
@@ -54,7 +54,7 @@ def activate(
         surgery_schema_name,
         create_schema=create_schema,
         create_tables=create_tables,
-        add_objects=linking_module.__dict__,
+        add_objects=_linking_module.__dict__,
     )
 
 
@@ -132,21 +132,15 @@ class Implantation(dj.Manual):
     """Implantation of a device
 
     Attributes:
-        Session (foreign key): Session primary key
-        location_id (int): ID of of brain location
-        ap ( float ): In mm, Anterior/posterior; Anterior Positive
-        ap_reference (projected attribute): Coordinate reference
-        ml ( float ): In mm, medial axis; Right Positive
-        ml_reference (projected attribute): Coordinate reference
-        dv ( float ): In mm, dorso-ventral axis. Ventral negative
-        dv_reference (projected attribute): Coordinate reference
-        theta ( float, nullable ): Elevation in degrees.
-            Rotation about ml-axis [0, 180] relative to z-axis
-        phi ( float, nullable ): Azimuth in degrees.
-            Rotations about dv-axis [0, 360] relative to x-axis
-        beta ( float, nullable ): Rotation about shank in degrees.
-            Rotation about the shank [-180, 180]. Clockwise is increasing.
-            0 is the probe-front facing anterior
+        Subject (foreign key): Subject primary key.
+        implant_date (datetime): Date and time of implantation surgery.
+        ImplantationType (foreign key): ImplantationType primary key.
+        region_acronym ( projected attribute, varchar(32) ): Brain region
+        shorthand from BrainRegion.
+        hemisphere ( projected attribute, varchar(8) ): Brain region hemisphere
+        from Hemisphere.
+        user ( projected attribute, varchar(32) ): User who performed the surgery.
+        implant_comment ( varchar(1024), optional ): Comments about the implant.
     """
 
     definition = """
@@ -161,6 +155,22 @@ class Implantation(dj.Manual):
     """
 
     class Coordinate(dj.Part):
+        """Coordinates of the Implantation Device.
+
+        Attributes:
+            Implantation (foreign key): Primary keys from Implantation.
+            ap ( float ): In mm, Anterior/posterior; Anterior Positive.
+            ap_reference (projected attribute): Coordinate reference.
+            ml ( float ): In mm, medial axis; Right Positive.
+            ml_reference (projected attribute): Coordinate reference.
+            dv ( float ): In mm, dorso-ventral axis. Ventral negative.
+            dv_reference (projected attribute): Coordinate reference.
+            theta ( float, nullable ): Elevation in degrees. Rotation about ml-axis [0, 180] relative to z-axis.
+            phi ( float, nullable ): Azimuth in degrees. Rotations about dv-axis [0, 360] relative to x-axis.
+            beta ( float, nullable ): Rotation about shank in degrees. Rotation
+            about the shank [-180, 180]. Clockwise is increasing. 0 is the probe-front facing anterior.
+        """
+
         definition = """
         -> master
         ---
