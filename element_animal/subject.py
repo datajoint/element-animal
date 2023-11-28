@@ -54,6 +54,19 @@ def activate(
 
 
 @schema
+class Species(dj.Lookup):
+    """Animal species
+
+    Attributes:
+        species ( varchar(64) ): Animal species, Latin name preferred for NWB export
+    """
+
+    definition = """  # Animal species
+    species: varchar(64)  # Animal species, Latin name preferred for NWB export
+    """
+
+
+@schema
 class Strain(dj.Lookup):
     """Genetic strain of an animal. (e.g. C57Bl/6).
 
@@ -112,7 +125,6 @@ class Line(dj.Lookup):
 
     Attributes:
         line ( varchar(32) ): Abbreviated name for the line.
-        species ( varchar(64) ): Latin name preferred for NWB export.
         line_description ( varchar(2000) ): Optional. Description of the line.
         target_phenotype ( varchar(255) ): Optional. Targeted gene phenotype.
         is_active (boolean) : Whether the line is in active breeding.
@@ -121,7 +133,6 @@ class Line(dj.Lookup):
     definition = """
     line                : varchar(32)  # abbreviated name for the line
     ---
-    species=''          : varchar(64)  # Latin name preferred for NWB export
     line_description='' : varchar(2000)
     target_phenotype='' : varchar(255)
     is_active           : boolean	   # whether the line is in active breeding
@@ -186,6 +197,20 @@ class Subject(dj.Manual):
         definition = """
         -> master
         -> User
+        """
+
+    class Species(dj.Part):
+        """Species of the subject.
+
+        Attributes:
+            Subject (foreign key): Subject key.
+            Species (foreign key): Species key.
+        """
+
+        definition = """
+        -> master
+        ---
+        -> Species
         """
 
     class Line(dj.Part):
