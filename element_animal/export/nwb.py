@@ -16,6 +16,7 @@ def subject_to_nwb(session_key: dict):
         pynwb.file.Subject: NWB object
     """
     subject_query = subject.Subject & session_key
+    subject_query = subject_query.join(subject.Subject.Species, left=True)
     subject_query = subject_query.join(subject.Subject.Line, left=True)
     subject_query = subject_query.join(subject.Subject.Strain, left=True)
     subject_query = subject_query.join(subject.Subject.Source, left=True)
@@ -29,7 +30,7 @@ def subject_to_nwb(session_key: dict):
             datetime.strptime("00:00:00", "%H:%M:%S").time(),
         ),
         description=json.dumps(subject_info, default=str),
-        species=str((subject.Line & subject_query).fetch("species")),
+        species=str((subject.Species & subject_query).fetch("species")),
         genotype=" x ".join(
             (subject.Line.Allele * subject.Subject.Line & subject_query).fetch("allele")
         ),
