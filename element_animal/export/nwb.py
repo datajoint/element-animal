@@ -30,7 +30,7 @@ def subject_to_nwb(session_key: dict):
             datetime.strptime("00:00:00", "%H:%M:%S").time(),
         ),
         description=json.dumps(subject_info, default=str),
-        species=str((subject.Species & subject_query).fetch("species")),
+        species=str((subject.Species & subject_query).fetch1("species")),
         genotype=" x ".join(
             (subject.Line.Allele * subject.Subject.Line & subject_query).fetch("allele")
         ),
