@@ -3,6 +3,9 @@
 Observes [Semantic Versioning](https://semver.org/spec/v2.0.0.html) standard and
 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) convention.
 
+## [0.2.2] - 2025-05-14
++ Fix - NWB export - `.fetch1()` from `Subject.Species` table
+
 ## [0.2.1] - 2023-11-28
 + Add - `Species` table in `subject` schema
 
