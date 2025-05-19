@@ -1,7 +1,7 @@
 --- # ---------------------- PROJECT SPECIFIC ---------------------------
 
 site_name: DataJoint Documentation
-site_url: https://docs.datajoint.com/elements/element-animal
+site_url: https://docs.datajoint.com/elements/element-animal/
 repo_url: https://github.com/datajoint/element-animal
 repo_name: datajoint/element-animal
 nav:
