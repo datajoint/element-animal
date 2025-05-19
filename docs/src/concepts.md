@@ -60,7 +60,7 @@ There are three modules in `element-animal`:
 
 ![Injection schema diagram](https://raw.githubusercontent.com/datajoint/element-animal/main/images/injection_diagram.svg)
 
-## `subject` schema ([API docs](https://datajoint.com/docs/elements/element-animal/api/element_animal/subject))
+## `subject` schema ([API docs](https://docs.datajoint.com/elements/element-animal/0.1/api/element_animal/subject/))
 
 - Although not required, most choose to connect the `Session` table to a `Subject` table.
 
@@ -74,7 +74,7 @@ There are three modules in `element-animal`:
 | SubjectCull  | Subject culling information                 |
 | Zygosity     | Information about zygosity of a subject     |
 
-### `genotyping` schema ([API docs](https://datajoint.com/docs/elements/element-animal/api/element_animal/genotyping))
+### `genotyping` schema ([API docs](https://docs.datajoint.com/elements/element-animal/0.1/api/element_animal/genotyping/))
 
 | Table          | Description                                                         |
 | -------------- | ------------------------------------------------------------------- |
@@ -88,7 +88,7 @@ There are three modules in `element-animal`:
 | SubjectCaging  | Information about subject and its cage.                             |
 | GenotypeTest   | Information about genotype test                                     |
 
-### `surgery` schema ([API docs](https://datajoint.com/docs/elements/element-animal/api/element_animal/surgery))
+### `surgery` schema ([API docs](https://docs.datajoint.com/elements/element-animal/0.1/api/element_animal/surgery/))
 
 | Table               | Description                                                    |
 | ------------------- | -------------------------------------------------------------- |
@@ -97,12 +97,3 @@ There are three modules in `element-animal`:
 | Hemisphere          | Brain region hemisphere                                        |
 | ImplantationType    | Type of implantation                                           |
 | Implantation        | Implantation of a device                                       |
-
-### `injection` schema ([API docs](https://datajoint.com/docs/elements/element-animal/api/element_animal/injection))
-
-| Table               | Description                                                    |
-| ------------------- | -------------------------------------------------------------- |
-| VirusSerotype       | Virus serotype                                                 |
-| InjectionProtocol   | Injection device protocol                                      |
-| VirusName           | Full virus name                                                |
-| Injection           | Information about the virus injection                          |
