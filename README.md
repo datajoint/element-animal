@@ -8,7 +8,7 @@ for neuroscience experiments. Each Element is a modular pipeline for data storag
 processing with corresponding database tables that can be combined with other Elements
 to assemble a fully functional pipeline.
 
-Installation and usage instructions can be found at the [Element documentation](https://datajoint.com/docs/elements/element-animal).
+Installation and usage instructions can be found at the [Element documentation](https://docs.datajoint.com/elements/element-animal/).
 
 ![Subect schema diagram](https://raw.githubusercontent.com/datajoint/element-animal/main/images/subject_diagram.svg)
 
