@@ -5,7 +5,7 @@ import datajoint as dj
 
 from . import subject
 
-schema = dj.schema()
+schema = dj.Schema()
 _linking_module = None
 
 
@@ -254,5 +254,5 @@ class GenotypeTest(dj.Manual):
     -> Sequence
     genotype_test_id    : varchar(32)    # identifier of a genotype test
     ---
-    test_result         : enum("Present", "Absent")     # test result
+    test_result         : enum('Present', 'Absent')     # test result
     """
