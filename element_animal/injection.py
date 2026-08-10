@@ -103,12 +103,12 @@ class InjectionProtocol(dj.Manual):
     """
 
     definition = """
-    protocol_id         : int
+    protocol_id         : int32
     ---
     -> Device
-    volume_per_pulse    : float
-    injection_rate      : float
-    interpulse_delay    : float
+    volume_per_pulse    : float32
+    injection_rate      : float32
+    interpulse_delay    : float32
     """
 
 
@@ -148,6 +148,6 @@ class Injection(dj.Manual):
     -> InjectionProtocol
     ---
     titer           : varchar(16)
-    total_volume    : float
+    total_volume    : float32
     injection_comment=''  : varchar(1024)
     """
