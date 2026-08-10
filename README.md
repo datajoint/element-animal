@@ -32,41 +32,57 @@ Upstream `element-animal` was last committed on 2025-05-20 and targets DataJoint
 rewrite; the current release is 2.3.2. Because the element's dependency pin
 admits 2.x, `pip install element-animal` on a fresh environment today resolves
 DataJoint 2.x and produces an installation in which the element cannot be
-imported. No element has a 2.x branch and there is no open migration issue or
-PR anywhere in the `datajoint` org.
+imported. No element had a 2.x branch and there was no open migration issue or
+PR anywhere in the `datajoint` org when this fork was created.
 
-This branch is a working port. It is layered in two commits so the reversible
-part can be adopted independently:
+**This branch is the complete migration, not a backward-compatible subset.**
+An earlier version of this fork split the work into a `compat-fixes` branch
+(changes that also work on 0.14.x) and this `datajoint-2.x` branch (adding the
+2.x-only changes on top). The upstream maintainer's guidance, after reviewing
+that split, was not to ship it that way: a schema is either 2.x or pre-2.x,
+DataJoint no longer supports pre-2.x, and landing the backward-compatible
+subset alone is actively harmful here -- it clears the import error while
+leaving any `longblob`/`attach` attributes in place, which silently corrupts
+data instead of loudly failing to import. See
+[the migration guide](https://docs.datajoint.com/how-to/migrate-to-v20/) for
+the authoritative type mapping and phase structure this follows (this is
+Phase I: code only, against empty schemas, no production data touched).
 
-| branch | changes | works on 0.14.x | works on 2.x |
-|---|---|---|---|
-| [`compat-fixes`](../../tree/compat-fixes) | 5 lines: `dj.schema`→`dj.Schema`, `boolean`→`bool`, `enum("x")`→`enum('x')` | **yes** | **yes** |
-| `datajoint-2.x` (this branch) | `compat-fixes` **+ 0 × `longblob` → `<blob>`** | **no** | **yes** |
+Both `compat-fixes` and `datajoint-2.x` now point at the same commit and carry
+the same content, kept as two names only so nothing that already referenced
+either one breaks.
 
-This element declares no `longblob` attributes, so `datajoint-2.x` is
-identical in content to `compat-fixes`; it exists only so that a workflow can
-pin all five forks by the same branch name. The note below applies to the
-other four.
+### Full scope of this branch
 
-`compat-fixes` is offered upstream as a pull request. The `datajoint-2.x`
-branches of the other forks are not, because
-`<blob>` has no 0.14.x-compatible spelling — 0.14.9 rejects it with
-`Support for Adapted Attribute types is disabled`.
+| change | count |
+|---|---|
+| `dj.schema` -> `dj.Schema` | 2 |
+| `boolean` -> `bool` | 1 |
+| double-quoted `enum("x")` -> `enum('x')` | 2 |
+| `int`/`tinyint` -> `int32`/`int8` | 4 |
+| `float` -> `float32` | 10 |
+| `requirements.txt`: `datajoint>=0.13` -> `datajoint>=2.3` | — |
 
 ### The `longblob` change is not cosmetic
 
 Under DataJoint 2.x a `longblob` attribute is a **raw native column**. It
-declares without error and the insert succeeds, but a numpy array written to it
-comes back as `bytes`:
+declares without error and the insert succeeds, but a numpy array written to
+it comes back as `bytes`:
 
 ```
-longblob   (as this element declares it)   -> returned type: bytes     round-trip OK: False
+longblob   (as this element declared it)   -> returned type: bytes     round-trip OK: False
 <blob>     (the 2.x codec)                 -> returned type: ndarray   round-trip OK: True
 ```
 
-Nothing raises. There is no warning. Existing pipeline code fails later, far
-from the cause, or silently computes on the wrong thing. See the corresponding
-issue on the upstream repo for the full round-trip evidence.
+Nothing raises. There is no warning beyond a generic "consider a core
+DataJoint type" notice at declaration time that says nothing about data loss.
+Traced upstream in datajoint/datajoint-python#1527: PyMySQL has no encoder for
+`np.ndarray` and silently falls back to `str(value)`; the same declaration on
+PostgreSQL raises instead of corrupting. See
+[datajoint/element-animal#52](https://github.com/datajoint/element-animal/issues/52)
+for the full round-trip evidence. This element declares no `longblob` itself,
+so the corruption risk described above does not apply to it directly -- but
+the branch-splitting problem does, which is why this branch exists at all.
 
 ### Using it
 
@@ -75,6 +91,9 @@ pip install git+https://github.com/akshay-jaggi/element-animal.git@datajoint-2.x
 ```
 
 Pin the commit rather than the branch name if you need reproducibility. Every
-change on both branches was applied mechanically with regexes and reviewed; no
-element behaviour was altered, only attribute-type spellings that 2.x renamed or
-replaced.
+change was applied mechanically (regex over each table's `definition` string,
+scoped so it cannot touch a docstring or a function signature) and then
+reviewed line by line; no element behaviour was altered, only attribute-type
+spellings that 2.x renamed, replaced, or requires as core types.
+
+Open PR: [datajoint/element-animal#51](https://github.com/datajoint/element-animal/pull/51).
