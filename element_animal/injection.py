@@ -69,24 +69,22 @@ class VirusSerotype(dj.Lookup):
     definition = """
     virus_serotype: varchar(10)
     """
-    contents = zip(
-        [
-            "AAV1",
-            "AAV2",
-            "AAV4",
-            "AAV5",
-            "AAV6",
-            "AAV7",
-            "AAV8",
-            "AAV9",
-            "AAV2/1",
-            "AAV2/5",
-            "AAV2/9",
-            "AAVrg",
-            "AAV/DJ",
-            "pAAV",
-        ]
-    )
+    contents = [
+        {"virus_serotype": "AAV1"},
+        {"virus_serotype": "AAV2"},
+        {"virus_serotype": "AAV4"},
+        {"virus_serotype": "AAV5"},
+        {"virus_serotype": "AAV6"},
+        {"virus_serotype": "AAV7"},
+        {"virus_serotype": "AAV8"},
+        {"virus_serotype": "AAV9"},
+        {"virus_serotype": "AAV2/1"},
+        {"virus_serotype": "AAV2/5"},
+        {"virus_serotype": "AAV2/9"},
+        {"virus_serotype": "AAVrg"},
+        {"virus_serotype": "AAV/DJ"},
+        {"virus_serotype": "pAAV"},
+    ]
 
 
 @schema
@@ -103,12 +101,12 @@ class InjectionProtocol(dj.Manual):
     """
 
     definition = """
-    protocol_id         : int
+    protocol_id         : int32
     ---
     -> Device
-    volume_per_pulse    : float
-    injection_rate      : float
-    interpulse_delay    : float
+    volume_per_pulse    : float32
+    injection_rate      : float32
+    interpulse_delay    : float32
     """
 
 
@@ -148,6 +146,6 @@ class Injection(dj.Manual):
     -> InjectionProtocol
     ---
     titer           : varchar(16)
-    total_volume    : float
+    total_volume    : float32
     injection_comment=''  : varchar(1024)
     """

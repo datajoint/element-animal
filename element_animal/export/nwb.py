@@ -32,6 +32,8 @@ def subject_to_nwb(session_key: dict):
         description=json.dumps(subject_info, default=str),
         species=str((subject.Species & subject_query).fetch1("species")),
         genotype=" x ".join(
-            (subject.Line.Allele * subject.Subject.Line & subject_query).fetch("allele")
+            (subject.Line.Allele * subject.Subject.Line & subject_query).to_arrays(
+                "allele"
+            )
         ),
     )

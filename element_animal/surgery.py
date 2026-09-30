@@ -69,9 +69,14 @@ class CoordinateReference(dj.Lookup):
     definition = """
     reference   : varchar(32)
     """
-    contents = zip(
-        ["bregma", "lambda", "dura", "skull_surface", "sagittal_suture", "sinus"]
-    )
+    contents = [
+        {"reference": "bregma"},
+        {"reference": "lambda"},
+        {"reference": "dura"},
+        {"reference": "skull_surface"},
+        {"reference": "sagittal_suture"},
+        {"reference": "sinus"},
+    ]
 
 
 @schema
@@ -102,7 +107,11 @@ class Hemisphere(dj.Lookup):
     hemisphere: varchar(8) # Brain region hemisphere
     """
 
-    contents = zip(["left", "right", "middle"])
+    contents = [
+        {"hemisphere": "left"},
+        {"hemisphere": "right"},
+        {"hemisphere": "middle"},
+    ]
 
 
 @schema
@@ -120,11 +129,11 @@ class ImplantationType(dj.Lookup):
     implant_description : varchar(32) # Full description for implanted device
     """
 
-    contents = (
-        ("ephys", "electophysiology"),
-        ("fiber", "fiber photometry"),
-        ("opto", "optogenetic perturbation"),
-    )
+    contents = [
+        {"implant_type": "ephys", "implant_description": "electophysiology"},
+        {"implant_type": "fiber", "implant_description": "fiber photometry"},
+        {"implant_type": "opto", "implant_description": "optogenetic perturbation"},
+    ]
 
 
 @schema
@@ -174,13 +183,13 @@ class Implantation(dj.Manual):
         definition = """
         -> master
         ---
-        ap=null       : float  # (mm) anterior-posterior; ref is 0
+        ap=null       : float32  # (mm) anterior-posterior; ref is 0
         -> [nullable] CoordinateReference.proj(ap_ref='reference')
-        ml=null       : float  # (mm) medial axis; ref is 0
+        ml=null       : float32  # (mm) medial axis; ref is 0
         -> [nullable] CoordinateReference.proj(ml_ref='reference')
-        dv=null       : float  # (mm) dorso-ventral axis; ventral negative
+        dv=null       : float32  # (mm) dorso-ventral axis; ventral negative
         -> [nullable] CoordinateReference.proj(dv_ref='reference')
-        theta=null    : float  # (deg) rot about ml-axis [0, 180] wrt z
-        phi=null      : float  # (deg) rot about dv-axis [0, 360] wrt x
-        beta=null     : float  # (deg) rot about shank [-180, 180] wrt anterior
+        theta=null    : float32  # (deg) rot about ml-axis [0, 180] wrt z
+        phi=null      : float32  # (deg) rot about dv-axis [0, 360] wrt x
+        beta=null     : float32  # (deg) rot about shank [-180, 180] wrt anterior
         """
