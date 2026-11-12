@@ -3,7 +3,7 @@ import inspect
 
 import datajoint as dj
 
-schema = dj.schema()
+schema = dj.Schema()
 
 
 def activate(
@@ -135,7 +135,7 @@ class Line(dj.Lookup):
     ---
     line_description='' : varchar(2000)
     target_phenotype='' : varchar(255)
-    is_active           : boolean	   # whether the line is in active breeding
+    is_active           : bool	   # whether the line is in active breeding
     """
 
     class Allele(dj.Part):
@@ -322,5 +322,5 @@ class Zygosity(dj.Manual):
     -> Subject
     -> Allele
     ---
-    zygosity : enum("Present", "Absent", "Homozygous", "Heterozygous")
+    zygosity : enum('Present', 'Absent', 'Homozygous', 'Heterozygous')
     """

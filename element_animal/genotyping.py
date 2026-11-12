@@ -5,7 +5,7 @@ import datajoint as dj
 
 from . import subject
 
-schema = dj.schema()
+schema = dj.Schema()
 _linking_module = None
 
 
@@ -158,7 +158,7 @@ class Litter(dj.Manual):
     -> BreedingPair
     litter_birth_date       : date
     ---
-    num_of_pups             : tinyint
+    num_of_pups             : int8
     litter_notes=''         : varchar(255)
     """
 
@@ -179,8 +179,8 @@ class Weaning(dj.Manual):
     -> Litter
     ---
     weaning_date            : date
-    num_of_male             : tinyint
-    num_of_female           : tinyint
+    num_of_male             : int8
+    num_of_female           : int8
     weaning_notes=''        : varchar(255)
     """
 
@@ -254,5 +254,5 @@ class GenotypeTest(dj.Manual):
     -> Sequence
     genotype_test_id    : varchar(32)    # identifier of a genotype test
     ---
-    test_result         : enum("Present", "Absent")     # test result
+    test_result         : enum('Present', 'Absent')     # test result
     """

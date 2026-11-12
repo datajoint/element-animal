@@ -174,13 +174,13 @@ class Implantation(dj.Manual):
         definition = """
         -> master
         ---
-        ap=null       : float  # (mm) anterior-posterior; ref is 0
+        ap=null       : float32  # (mm) anterior-posterior; ref is 0
         -> [nullable] CoordinateReference.proj(ap_ref='reference')
-        ml=null       : float  # (mm) medial axis; ref is 0
+        ml=null       : float32  # (mm) medial axis; ref is 0
         -> [nullable] CoordinateReference.proj(ml_ref='reference')
-        dv=null       : float  # (mm) dorso-ventral axis; ventral negative
+        dv=null       : float32  # (mm) dorso-ventral axis; ventral negative
         -> [nullable] CoordinateReference.proj(dv_ref='reference')
-        theta=null    : float  # (deg) rot about ml-axis [0, 180] wrt z
-        phi=null      : float  # (deg) rot about dv-axis [0, 360] wrt x
-        beta=null     : float  # (deg) rot about shank [-180, 180] wrt anterior
+        theta=null    : float32  # (deg) rot about ml-axis [0, 180] wrt z
+        phi=null      : float32  # (deg) rot about dv-axis [0, 360] wrt x
+        beta=null     : float32  # (deg) rot about shank [-180, 180] wrt anterior
         """
